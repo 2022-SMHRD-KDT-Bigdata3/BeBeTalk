@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+		
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- HikariCP API -->
+	<!-- 객체 생성 태그 bean -->
+	<bean id="HikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value = "com.mysql.cj.jdbc.Driver"/>
+		<!-- mysql 기본 접속 url -->
+		<property name="jdbcUrl" value="jdbc:mysql://project-db-stu.ddns.net:3307/bebe"/>
+		<property name="username" value="bebe"/>
+		<property name="password" value="bebe"/>
+	</bean> 
+			
+	<bean id = "dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<!-- HikariConfig 를 참조 -->
+		<constructor-arg ref="HikariConfig" />
+	</bean>
+	
+	<!-- mybatis-spring API -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name = "dataSource" ref="dataSource"/>
+	</bean>	
+	
+	<!-- spring mapper scan 하는 것 -->
+	<mybatis-spring:scan base-package="kr.bebetalk.mapper"/>
+	
+		
+</beans>
