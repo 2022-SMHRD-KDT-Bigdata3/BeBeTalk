@@ -12,3 +12,7 @@ insert into board(title, content, writer)
 values('게시판 연습', '게시판 연습 ', '관리자')
 
 select * from board
+
+delete from board where idx > 1
+
+drop table board;

@@ -7,7 +7,7 @@
   <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
   <!-- contextpath(유지보수하는데 도움이 됨)를 가지고 오는 방법 -->
   <c:set var="cpath" value="${pageContext.request.contextPath}"/> 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     
 <!DOCTYPE html>
@@ -15,6 +15,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script type="text/javascript">
+	$(function() {
+		$("input[type=button]").click(function() {
+			console.log("o~~~k")
+			console.log(location.origin); // "https://www.naver.com" (포트 번호 80번은 생략됨)
+			//폼태그에서 보내준 데이터 받기 
+			
+			var form = $("#fileUploadForm")[0];  
+		 	var data = new FormData(form);
+		 		
+			//var title = $("#title")
+			//var content = $("#content")
+			//var writer = $("#writer")
+			//data = {"title" : title, "content" : content, "writer" : writer},
+			
+			$("input[type=button]").prop("disabled", true);
+			$.ajax({
+			url : "http://127.0.0.1:5000/receive_data", //flask주소
+			async : true,
+			type : "POST",
+			data : data,
+			processData : false,
+			contentType : false,
+			cache : false,
+			timeout : 600000,
+			success : function(data) {
+		 		var title=data["title"];
+		 		var content=data["content"];
+		 		var writer=data["writer"];
+		 		console.log(data)
+				$.ajax({
+				    url: "${cpath}/dataInsert.do",
+				    type: "POST",
+				    data : {"title" : title, "content" : content, "writer" : writer},
+				    success: function() { },
+				    error: function(){ alert("error");}
+					});
+				},
+			error : function(e) {
+			console.log("ERROR : ", e);
+			alert("fail");
+				}
+			});
+		})
+	});
+</script> 
+
 </head>
 <body>
 
@@ -37,6 +85,24 @@
 	</tr>
 	</c:forEach>
 </table>
+
+
+	<form method="post" enctype="multipart/form-data" id="fileUploadForm">
+		<div class="form-group">
+			<label for="title"> 제목 : </label>
+			<input type="text" id = "title" name="title">
+		</div>
+		<div class="form-group">
+			<label for="title"> 내용 : </label>
+			<input type="text" id = "content" name="content">
+		</div>
+		<div class="form-group">
+			<label for="title"> 작가 : </label>
+			<input type="text" id = "writer" name="writer" >
+		</div>
+		<input type="button" value=" 비동기 요청 ">		
+	</form>
+
 
 </body>
 </html>

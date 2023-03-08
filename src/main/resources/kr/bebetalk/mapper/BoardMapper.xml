@@ -5,5 +5,10 @@
 	<select id = "boardList" resultType="kr.bebetalk.entity.Board">
 		select * from board order by idx desc
 	</select>
+	
 
+
+   <insert id="datainsert" parameterType="kr.bebetalk.entity.Board">
+      insert into board(title, content, writer) values( #{title}, #{content}, #{writer})
+   </insert>
 </mapper>
