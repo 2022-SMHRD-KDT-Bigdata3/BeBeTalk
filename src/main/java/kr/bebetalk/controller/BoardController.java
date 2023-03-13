@@ -55,5 +55,25 @@ public class BoardController {
 			return "redirect:/boardList.do";
 			// redirect: 가 있기 때문에 jsp로 가지 않는다
 		}
+		
+		
+		
+		// 나중에 index 만들면 지워야함 // 
+		@RequestMapping("/main.do")
+		public String main() {
+			return "main";
+		}
+		
+		@RequestMapping("/join.do")
+		public String join() {
+			return "join";
+		}
+		
+		@RequestMapping("/login.do")
+		public String login() {
+			return "login";
+		}
+		
+		// 나중에 index 만들면 지워야함 // 
 	
 }
