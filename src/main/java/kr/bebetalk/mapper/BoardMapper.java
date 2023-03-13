@@ -12,5 +12,7 @@ public interface BoardMapper {
 	public List<Board> boardList(); // SQL연결 : SQL Mapper File
 		// 추상메서드 
 		//JDBC ,Mybatis 없음!
-	
+
+	public void datainsert(Board vo);
+
 }
