@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kr.bebetalk.mapper.UserMapper" >
+
+	<insert id="join" parameterType="kr.bebetalk.entity.User">
+		insert into UserTable(UserID, UserPassword, UserName, UserEmail) values(#{UserID}, #{UserPassword}, #{UserName}, #{UserEmail})
+	</insert>
+	
+</mapper>
