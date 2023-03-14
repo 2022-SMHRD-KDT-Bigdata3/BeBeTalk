@@ -20,12 +20,12 @@ public class LoginController {
 	
 	@GetMapping("/main.do")
 	public String main() {
-		return "main"; // login.jsp로 연결
+		return "main/main"; // login.jsp로 연결
 	}
 	
 	@GetMapping("/login.do")
 	public String BeforeLogin() {
-		return "login"; // login.jsp로 연결
+		return "main/login"; // login.jsp로 연결
 	}
 	
 	@PostMapping("/login.do")
@@ -42,7 +42,7 @@ public class LoginController {
 	
 	@GetMapping("/join.do")
 	public String join() {
-		return "join"; // join.jsp로 연결
+		return "main/join"; // join.jsp로 연결
 	}
 	
 //	@PostMapping("/checkId.do")
@@ -59,7 +59,7 @@ public class LoginController {
 		
 		System.out.println("회원가입 성공");
 		
-		return "login";
+		return "main/login";
 	}
 	
 	@PostMapping("/logout.do")

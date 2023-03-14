@@ -372,6 +372,8 @@ span.bbt {
 }
 
 
+
+
 /* test_voice페이지 이미지 슬라이딩 효과*/
 .carousel-item {
   height: 65vh;
@@ -11659,7 +11661,7 @@ header.masthead .site-heading .h1 {
 }
 
 .post-preview > a {
-  color: #212529;
+  color: #0c4128;
   text-align : center;
 }
 .post-preview > a:focus, .post-preview > a:hover {
@@ -11668,12 +11670,12 @@ header.masthead .site-heading .h1 {
   
 }
 .post-preview > a > .post-title {
-  font-size: 1.875rem;
+  font-size: 10px;
   margin-top: 1.875rem;
   margin-bottom: 0.625rem;
 }
 .post-preview > a > .post-subtitle {
-  font-weight: 300;
+  font-weight: 200;
   margin-bottom: 0.625rem;
 }
 .post-preview > .post-meta {

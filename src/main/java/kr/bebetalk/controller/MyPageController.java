@@ -15,7 +15,7 @@ public class MyPageController {
 	
 	@RequestMapping("/myPage.do")
 	private String myPage() {
-		return "myPage";
+		return "main/mypage";
 	}
 
 }
