@@ -42,7 +42,7 @@
         <div class="container px-4 px-lg-5">
 
             <a class="navbar-brand" href="${cpath}/main.do"
-                style="font-size: 2.5em; color:rgb(10, 75, 18);font-family: 'Gaegu', cursive; font-weight: 700;">베베톡</a>
+                style="font-size: 2.5em; color: rgb(255, 255, 255); text-shadow: 2px 2px 2px rgb(0, 0, 0); font-family: 'Gaegu', cursive; font-weight: 700;">베베톡</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu

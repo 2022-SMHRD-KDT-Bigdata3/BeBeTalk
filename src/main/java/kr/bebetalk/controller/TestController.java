@@ -18,19 +18,34 @@ public class TestController {
 	}
 
 	
-	@RequestMapping("/testVoice1.do")
-	private String testVoice1() {
-		return "/test/test_voice_1";
+	@RequestMapping("/testVoice1-1.do")
+	private String testVoice1_1() {
+		return "/test/test_voice_1_1";
 	}
 	
-	@RequestMapping("/testVoice2.do")
-	private String testVoice2() {
-		return "/test/test_voice_2";
+	@RequestMapping("/testVoice1-2.do")
+	private String testVoice1_2() {
+		return "/test/test_voice_1_2";
 	}
 	
-	@RequestMapping("/testVoice3.do")
-	private String testVoice3() {
-		return "/test/test_voice_3";
+	@RequestMapping("/testVoice1-3.do")
+	private String testVoice1_3() {
+		return "/test/test_voice_1_3";
+	}
+	
+	@RequestMapping("/testVoice2-1.do")
+	private String testVoice2_1() {
+		return "/test/test_voice_2_1";
+	}
+	
+	@RequestMapping("/testVoice2-2.do")
+	private String testVoice2_2() {
+		return "/test/test_voice_2_2";
+	}
+	
+	@RequestMapping("/testVoice2-3.do")
+	private String testVoice2_3() {
+		return "/test/test_voice_2_3";
 	}
 	
 	@RequestMapping("/testCheck.do")

@@ -127,7 +127,7 @@
 					<div class="row gx-4 gx-lg-5"
 						style="background-color: rgb(158, 201, 84)">
 						<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-music-note-list"
 									viewBox="0 0 16 16">
@@ -147,7 +147,7 @@
 						</div>
 
 						<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3" s> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-soundwave" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
@@ -160,7 +160,7 @@
 						</div>
 
 						<div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-ui-checks" viewBox="0 0 16 16">
                                         <path
@@ -173,7 +173,7 @@
 						</div>
 
 						<div class="col-lg-3 col-md-6">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
                                         <path

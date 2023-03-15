@@ -54,6 +54,11 @@
                 margin: 0.5rem 0;
             }
     
+            /* 검사 순서안내  반응형 센터정렬 */
+           .wrapper{
+                display: flex;
+                justify-content: center;
+            }
             /* 검사 순서안내 원모양 4단계 CSS */
             .step-box1 {
                 height: 100px;
@@ -145,6 +150,7 @@
         </header>
 
         <!--검사순서 안내-->
+        <div class="wrapper">
         <div style="padding-top: 40px;">
             <div class="container px- text-center" style="font-family: 'GangwonEdu_OTFBoldA';">
                 <div class="row">
@@ -170,6 +176,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <br><br>
         <!--문항체크실시-->

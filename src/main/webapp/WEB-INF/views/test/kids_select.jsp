@@ -29,7 +29,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
-        <link href="${cpath}/resources/css/styles2.css" rel="stylesheet" />
+        <!--<link href="${cpath}/resources/css/styles2.css" rel="stylesheet" /> -->
         <link href="${cpath}/resources/css/result.css" rel="stylesheet" />
 
 
@@ -96,6 +96,13 @@
 
 
             /* 검사 순서안내 원모양 4단계 CSS */
+            
+            /* 검사 순서안내  반응형 센터정렬 */
+           .wrapper{
+                display: flex;
+                justify-content: center;
+            }
+                
             .step-box1 {
                 height: 100px;
                 width: 100px;
@@ -144,11 +151,21 @@
                 font-weight: bolder;
                 /* box-shadow: 2px 2px 2px 2px gray; */
             }
+              #sform {
+                 display: inline-block;
+                 text-align: center;
+            }
+
+             .space {
+                 width: 10px;
+                 height: auto;
+                 display: inline-block;
+            }
         </style>
     </head>
 
     
-    <body>
+    <body >
       <!-- 상단: 로고와 메뉴-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -172,7 +189,8 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10 col-lg-8 col-xl-7">
                             <div style="font-size:small" class="page-heading">
-                                <h2 style="color:rgb(255, 255, 255);  font-weight: bold; text-shadow: 2px 2px 2px rgb(40, 39, 39);">아이선택</h2>
+                                <h2 style="color:rgb(255, 255, 255);font-family:'GangwonEdu_OTFBoldA'; font-weight: bold; text-shadow: 2px 2px 2px rgb(40, 39, 39);">
+                            아이선택</h2>
                             </div>
                         </div>
                     </div>
@@ -181,6 +199,7 @@
 
 
             <!--검사순서 안내-->
+            <div class="wrapper">
             <div style="padding-top: 40px;">
                 <div class="container px- text-center" style="font-family: 'GangwonEdu_OTFBoldA';">
                     <div class="row">
@@ -207,15 +226,17 @@
                     </div>
                 </div>
             </div>
+           </div>
 
         <!-- 아이선택 부분-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- 아이선택 안내멘트-->
-                <span><h2 style="text-align: center; color: rgb(33, 42, 33);">아이의 네임 카드를 선택해주세요✔</h2></span>
+                <span><h2 style="font-family:'GangwonEdu_OTFBoldA'; text-align: center; color: rgb(33, 42, 33);">아이의 네임 카드를 선택해주세요✔</h2></span>
+                <br>
                 <!-- 아이추가버튼: 클릭시 모달창 생성 -->
                 <div class="d-block text-center mt-2 small">
-                    <button type="button" class="btn btn-outline-success" id="btn-modal">아이 추가등록
+                    <button type="button" class="btn btn-outline-success" id="btn-modal" style="font-family:'GangwonEdu_OTFBoldA';">아이 추가등록
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16"   preserveAspectRatio="xMinYMin meet">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                           </svg>
@@ -227,40 +248,77 @@
             
                 <!-- 기능: 아이 카드 클릭시 아이정보를 가지고 검사하러 가기 -->
                 <!-- 아이선택카드 -->
-                <div class="row justify-content-center" style="text-align: center; border-radius: 20px;">
-                    <!-- 프로필1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+            <div class="row justify-content-center" style="text-align: center; border-radius: 20px;padding-top:;">
+                <!-- 프로필1-->
+                <div style="text-align: center; margin-top: 10px;">
+                    <form action="" method="post">
+                      <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"><i
+                                        class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <a href="./test_voice.html"><img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필1.jpg" alt=""  /></a>
-                        </div> 
-                             <!--등록된 아이 출력-->
-                             <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">혀나</p>
-                    </div>
-                    <!-- 프로필2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
+                        </div>
+
+                        <!--등록된 아이 출력-->
+                        <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">혀나 
+                            <input type="radio" name=check value="현아" style="margin-top: 10px; margin-left: 15px;"></p>
+
+
+                        <!-- 프로필2-->
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            <div
+                                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                <i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필3.jpg" alt="..." />
                         </div>
-                          <!--등록된 아이 출력-->
-                         <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">유나니</p>
+                        <!--등록된 아이 출력-->
+                        <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">유나니
+                            <input type="radio" name=check value="유나니" style="margin-top: 10px; margin-left: 15px;">
+                        </p> <br>
+                        <div class="post-preview">
+<%--                         <a href="${cpath}/testVoice1.do"> --%>
+<!--                             <h2 class="post-title">음성테스트를 진행하시겠습니까?</h2> -->
+<!--                         </a> -->
+                        <h4 class="post-meta">
+                           🎤조용한 환경에서 음성테스트를 진행해주세요
+                        </h4>
+                        <br><br>
                     </div>
-                    
-                    <!--아이 추가시 플로필과 이름 추가뜨기 -->
-                    <!-- <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/아이선택페이지_프로필2.jpg" alt="..." />
-                        </div> 
-                        <p style="text-align:center; font-family: 'GangwonEdu_OTFBoldA';">경워니</p>
-                    </div> -->
+                            <button type="submit" class="btn btn-outline-success" name="button1" style="font-family:'GangwonEdu_OTFBoldA';">바다테마<br>음성검사하기
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                                
+                            </button>
+                            <div class="space"></div>
+                            <button type="submit" class="btn btn-outline-success" name="button2" style="font-family:'GangwonEdu_OTFBoldA';">꽃밭테마<Br>음성검사하기
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                            </button>
+                        <!-- </div><br> -->
+                    </form>
+                    <script>
+                        document.querySelector('form').addEventListener('submit', function(e) {
+                          e.preventDefault(); // 기본 submit 이벤트 중지
+                          
+                          // 버튼 구분
+                          var buttonName = e.submitter.name;
+                          if (buttonName === 'button1') {
+                            window.location.href = '${cpath}/testVoice1-1.do'; // 버튼1을 클릭한 경우 페이지1로 이동
+                          } else if (buttonName === 'button2') {
+                            window.location.href = '${cpath}/testVoice2-1.do'; // 버튼2를 클릭한 경우 페이지2로 이동
+                          }
+                        });
+                      </script>
+                </div>
             </div>
         </section>
               
@@ -320,68 +378,47 @@
         </div>            
                     
                     <!-- 음성테스트 진행 여부 묻기& 주의사항 안내--> 
-                    <div class="post-preview">
-<%--                         <a href="${cpath}/testVoice1.do"> --%>
-<!--                             <h2 class="post-title">음성테스트를 진행하시겠습니까?</h2> -->
-<!--                         </a> -->
-                        <h4 class="post-meta">
-                           🎤조용한 환경에서 음성테스트를 진행해주세요
-                        </h4>
-                    </div>
+                    
                     <br>
-                    <!--음성검사하러가기 버튼이동 -->
-                    <div class="d-block text-center mt-2 small">
-                        <button type="button" class="btn btn-outline-success" onClick="location.href='${cpath}/testVoice2.do'">바다테마<Br>음성검사하기
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                              </svg>
-                        </button>
-                        <button type="button" class="btn btn-outline-success" onClick="location.href='${cpath}/testVoice2.do'">꽃밭테마<Br>음성검사하기
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                              </svg>
-                        </button>
-                    </div><br>
-            
         <!-- Footer-->
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; BEBETALK 2023</div>
-                    </div>
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; BEBETALK 2023</div>
                 </div>
             </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts1.js"></script>
-    </body>
-</html>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts1.js"></script>
+</body>
 
+</html>

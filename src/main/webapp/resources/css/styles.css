@@ -34,6 +34,69 @@
   font-style: normal;
 } 
 
+/* 메인 서비스 소개 아이콘 위치*/
+#service-svg{
+    position: relative;
+    top:30%;
+    right:auto;
+        }
+        
+    
+    
+
+     /* [재생]버튼 색/호버/클릭 효과 */
+        #myButton {
+        background-color: rgb(163, 249, 247);
+        color: rgb(37, 29, 29);
+        border-radius: 8px;
+        font-family: 'GangwonEdu_OTFBoldA';
+        }
+
+        #myButton:hover {
+        background-color: rgb(90, 210, 234);
+        }
+
+        #myButton:active {
+        background-color: rgb(4, 89, 174);
+        color: rgb(255, 255, 255);
+        }
+        
+
+        /* [녹음]버튼 색/호버/클릭 효과  */
+        #myButton2 {
+        background-color: rgb(240, 147, 147);
+        color: rgb(37, 29, 29);
+        border-radius: 8px;
+        font-family: 'GangwonEdu_OTFBoldA';
+        }
+
+        #myButton2:hover {
+        background-color: rgb(242, 107, 103);
+        }
+
+        #myButton2:active {
+        background-color: rgb(244, 62, 62);
+        color: rgb(255, 255, 255);
+        }
+
+
+        /* [완료] 버튼 색/호버/클릭 효과 */
+        #myButton3 {
+        background-color: rgb(221, 240, 147);
+        color: rgb(37, 29, 29);
+        border-radius: 8px;
+        font-family: 'GangwonEdu_OTFBoldA';
+        }
+
+        #myButton3:hover {
+        background-color: rgb(212, 241, 50);
+        }
+
+        #myButton3:active {
+        background-color: rgb(189, 183, 3);
+        color: rgb(255, 255, 255);
+        }    
+    
 
 
 :root {
