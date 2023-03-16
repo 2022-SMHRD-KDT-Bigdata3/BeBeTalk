@@ -242,7 +242,7 @@
                         <input type="radio" name="question5_2" value="no"> No
                     </ul>
                     <div class="d-block text-center mt-2 small">
-                        <button type="button" class="btn btn-primary" onClick="location.href='${cpath}/result.do'"> 결과
+                        <button type="button" class="btn btn-primary" onClick="location.href='${cpath}/result2.do'"> 결과
                             확인하기
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-arrow-right" viewBox="0 0 16 16">

@@ -34,6 +34,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
+    <style>
+      hr {
+  border: none;
+  border-top: 1px dotted #f89808;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+}
+    </style>
 </head>
 
 <body>
@@ -83,7 +93,7 @@
     </section>
 
     <!-- 등록된 자녀 보여주기 1, 2, 3 선택한 이미지 보여주기-->
-    <section class="page-section bg-light">
+    <section class="page-section bg-light" style="margin-top: 40px;">
         <div class="container px-5 "><br>
             <div class="p-2">
                 <h2>등록된 자녀</h2>
@@ -137,8 +147,10 @@
                 <br>
             </div>
             <div class="row justify-content-center">
-                <div class="item col-12 col-lg-4 p-3 mb-4">
-                    <div class="item-inner theme-bg-light rounded p-4" style="border : 2px solid #f89808;">
+                <div class="item col-12 col-lg-4 p-3 mb-4" >
+                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;background-color: white;">
+                        <h6>검사 날짜</h6>
+                        <hr>
                         <blockquote class="quote">
                             "이전 검사 결과 "
                         </blockquote>
@@ -151,7 +163,9 @@
                     </div>     
                 </div>
                 <div class="item col-12 col-lg-4 p-3 mb-4" >
-                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;">
+                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;background-color: white;">
+                        <h6>검사 날짜</h6>
+                        <hr>
                         <blockquote class="quote">
                             "이전 검사 결과 "
                         </blockquote>
@@ -163,8 +177,10 @@
                         </div>                    
                     </div>     
                 </div>
-                <div class="item col-12 col-lg-4 p-3 mb-4">
-                    <div class="item-inner theme-bg-light rounded p-4" style="border : 2px solid #f89808;">
+                <div class="item col-12 col-lg-4 p-3 mb-4" >
+                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;background-color: white;">
+                        <h6>검사 날짜</h6>
+                        <hr>
                         <blockquote class="quote">
                             "이전 검사 결과 "
                         </blockquote>
