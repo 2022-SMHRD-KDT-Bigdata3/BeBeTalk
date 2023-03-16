@@ -29,8 +29,9 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
-        <!--<link href="${cpath}/resources/css/styles2.css" rel="stylesheet" /> -->
-        <link href="${cpath}/resources/css/result.css" rel="stylesheet" />
+      <!-- <link href="${cpath}/resources/css/styles2.css" rel="stylesheet" />--> 
+       <!--  <link href="${cpath}/resources/css/styles2.css" rel="stylesheet"/>--> 
+        <link href="${cpath}/resources/css/result.css" rel="stylesheet"/>
 
 
         <!--모달창 스타일-->
@@ -161,6 +162,12 @@
                  height: auto;
                  display: inline-block;
             }
+            
+            <!--프로필 이미지 크기조절-->
+           /* .img-fluid {
+ 				 max-width: 50%;
+ 				 height: auto;
+				} */
         </style>
     </head>
 
@@ -257,7 +264,7 @@
                                 <div class="portfolio-item-caption-content text-center text-white"><i
                                         class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <a href="./test_voice.html"><img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필1.jpg" alt=""  /></a>
+                            <a href="./test_voice.html"><img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필1.jpg"/></a>
                         </div>
 
                         <!--등록된 아이 출력-->

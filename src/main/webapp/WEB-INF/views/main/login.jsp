@@ -65,8 +65,8 @@
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card border-0 shadow rounded-3 my-5">
               <div class="card-body p-4 p-sm-5">
-                <h2 class="card-title text-center mb-5 fw-light fs-5">Login</h2>
-                
+                  <h3 class="card-title text-center">로그인</h3>
+                             
                 <!-- 로그인 form 태그 -->
                 <form id="loginSubmit" action="${cpath}/login.do" method="post">
                 <!-- 아이디, 패스워드 파라미터 값을 login.do로 post방식으로 요청 -->

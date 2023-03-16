@@ -635,10 +635,10 @@ progress {
   content: "— ";
 }
 
-/* .img-fluid {
-  max-width: 30%;
+/*.img-fluid {
+  max-width: 50%;
   height: auto;
-} */
+}*/
 
 .img-thumbnail {
   padding: 0.25rem;

@@ -93,7 +93,7 @@
 							</p>
 						</div>
 						<h3 style="text-align: left; font-weight: bolder;">
-							<span class="bbt"> 딥러닝을 활용한<br>영유아 표준 음성 분석시스템
+							 <span class="bbt">아이의 작은 목소리에서<br>성장을 봅니다.</span>
 							</span>
 						</h3>
 					</div>
@@ -122,7 +122,8 @@
 					<div class="content-section-heading"
 						style="background-color: rgb(158, 201, 84)">
 						<br>
-						<h2 class="mb-5">Services</h2>
+						<h2 >Services</h2>
+						<h5 style="color: darkgreen;">딥러닝을 활용한 아동음성데이터 연령 분석 서비스</h5><br>
 					</div>
 					<div class="row gx-4 gx-lg-5"
 						style="background-color: rgb(158, 201, 84)">
@@ -142,7 +143,7 @@
                                     </svg> <i class="icon-screen-smartphone"></i>
 							</span>
 							<h4>
-								<strong style="color: white !important">표준 음성데이터 제공</strong>
+								  <h4><strong style="color: white !important">연령별<br>음성데이터 분석</strong></h4>
 							</h4>
 						</div>
 
@@ -155,7 +156,7 @@
                                     </svg> <i class="icon-pencil"></i>
 							</span>
 							<h4>
-								<strong>음성데이터 검사</strong>
+								 <h4><strong>음성 검사</strong></h4>
 							</h4>
 						</div>
 
