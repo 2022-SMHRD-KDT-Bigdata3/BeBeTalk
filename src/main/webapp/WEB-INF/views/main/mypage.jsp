@@ -35,15 +35,15 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
     <style>
-      hr {
-  border: none;
-  border-top: 1px dotted #f89808;
-  color: #fff;
-  background-color: #fff;
-  height: 1px;
-  width: 100%;
-}
-    </style>
+	      hr {
+	  border: none;
+	  border-top: 1px dotted #f89808;
+	  color: #fff;
+	  background-color: #fff;
+	  height: 1px;
+	  width: 100%;
+	}
+	    </style>
 </head>
 
 <body>
@@ -109,7 +109,7 @@
                             <h5 class="card-title text-center">"경워니"</h5>
                             <p class="card-text text-center"> 4세 / 여 </p>
                             <button type="button" class="btn btn-default btn-sm text-white"
-                                style="background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
+                                style="background-color:#228B22; float: right; border-radius: 10px;">삭제</button>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                             <h5 class="card-title text-center">"유나니"</h5>
                             <p class="card-text text-center"> 5세 / 남 </p>
                             <button type="button" class="btn btn-default btn-sm text-white"
-                                style="background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
+                               style="background-color:#228B22; float: right; border-radius: 10px;">삭제</button>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                             <h5 class="card-title text-center">"은지니"</h5>
                             <p class="card-text text-center"> 6세 / 여 </p>
                             <button type="button" class="btn btn-default btn-sm text-white"
-                                style="background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
+                                style="background-color:#228B22; float: right; border-radius: 10px;">삭제</button>
 
                         </div>
                     </div>
