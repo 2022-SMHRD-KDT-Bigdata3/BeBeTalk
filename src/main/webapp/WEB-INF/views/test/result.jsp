@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-     <!-- jstl 태그들은 다른 태그들과 충돌이 날 수 있기 때문에 접두사로 c를 붙여준다! -->
+  <!-- jstl 태그들은 다른 태그들과 충돌이 날 수 있기 때문에 접두사로 c를 붙여준다! -->
   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
   <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
   <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -181,6 +181,13 @@
 
     
     </style>
+    <script type="text/javascript">
+    	var prediction = sessionStorage.getItem("prediction");
+    	var probability = sessionStorage.getItem("probability");
+    	console.log(prediction +"/" + probability);
+    
+    </script>
+    
 </head>
 
 
@@ -199,9 +206,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/kidsSelect.do"
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/childList.do?testeeID=${uvo.userID}"
                             style="font-size: 1em; color: black;"> TEST </a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do"
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}"
                             style="font-size: 1em; color: black;"> MY PAGE </a></li>
                             
                 </ul>

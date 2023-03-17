@@ -10,6 +10,8 @@
   <!-- contextpath(유지보수하는데 도움이 됨)를 가지고 오는 방법 -->
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
+<!-- jQuery -->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
