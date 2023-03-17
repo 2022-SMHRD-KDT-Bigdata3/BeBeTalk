@@ -36,6 +36,12 @@
     <link href="${cpath}/resources/css/result.css" rel="stylesheet" />
 
     <style>
+         /* 검사 순서안내  반응형 센터정렬 */
+         .wrapper{
+            display: flex;
+            justify-content: center;
+            } 
+        
          /* 검사 순서안내 원모양 4단계 CSS */
         .step-box1 {
             height: 100px;
@@ -85,6 +91,95 @@
             font-weight: bolder;
             box-shadow: 3px 3px 3px 3px gray;
         }
+        
+        /* 검사결과지 */
+        /* 칠판 스타일 */
+
+        .wrapper1{
+            margin-top: 0%;
+            display: flex;
+            justify-content: center;
+        }
+
+
+	   /* 배경색 지정 */
+	   body {
+	    font-family: ;
+	    background-color: #f7f7f7;
+	   }
+	     
+      /* 칠판 스타일 */
+      .blackboard {
+        /* width: 700px; */
+        height: 850px;
+        background-color: rgb(251, 251, 217);
+        background-size: cover;
+        /* background-position: center; */
+        padding-top: 0%;
+        position: relative;
+      }
+      
+      
+      /* 검사결과창 스타일 */
+      .result-box {
+        /* width: 700px;
+        height: 600px; */
+        background-color: #ffffff;
+        padding: 30px;
+        box-shadow: 0px 5px 10px rgba(12, 12, 12, 0.3);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+      }
+      /* 제목 스타일 */
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      /* 내용 스타일 */
+      p {
+        margin-top: 30px;
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+      }
+    
+    .inBox{
+        width: 600px;
+        height: 600px;
+        background-position: center;
+        background-color: rgb(251, 251, 217);
+    }
+
+    .mark{
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(255, 185, 35);
+       
+
+    }
+
+    .textbox{
+        width: 500px;
+        height: 200px;
+        background-position: center;
+        text-align: center;
+        margin-left: 50px;
+        border-style: dotted;
+        border-color: rgb(245, 130, 7);
+        border-radius: 20px;
+        background-color: rgb(244, 244, 155);
+    }
+
+    
     </style>
 </head>
 
@@ -128,6 +223,7 @@
     </header>
 
    <!--검사순서 안내-->
+    <div class="wrapper">
     <div style="padding-top: 40px;">
         <div class="container px- text-center">
             <div class="row">
@@ -154,24 +250,42 @@
             </div>
         </div>
     </div>
+    </div>
     <br><br>
 
-
-    <!--검사결과-->
+  <!--검사결과-->
     <div class="container">
-        <div class="container px-4 text-center">
-            <h3 style="font-family: 'GangwonEdu_OTFBoldA'; text-align: center;"><strong>검사결과</strong></h3>
-            <hr class='hr-solid' style="border : 0px;border-top: 5px solid #88c56a;" />
-            <br>
-            <div class="result">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
-                    <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z"/>
-                  </svg><span style="font-size: 25px; font-family: 'GangwonEdu_OTFBoldA';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${result.resultString}</span>
+        <div class="container px-4 text-center">  
+            <h3 style= "font-family: 'GangwonEdu_OTFBoldA'";>검사 결과🌱</h3>        
+            <hr class='hr-solid'>
+
+    <!-- 베베톡 결과 안내 결과지 -->
+    <div class="wrapper1" style="margin-top: -80px;">   
+            <div class="blackboard" >
+                <div class="result-box">
+                  <div class="inBox"> 
+                      <div class="mark">
+                      </div> 
+                        <p style="font-size: 2.3em; color: rgb(245, 130, 7); font-family: 'Gaegu'; font-weight: 38;">베베톡 결과 안내<br>
+                        <img src="resources/assets/img/아이선택페이지_프로필1.jpg" style="width:200px; height: 200px; margin-bottom: -32px;" />
+                        <!--결과출력 텍스트 박스--> 
+                        <div class="textbox"> <br>
+                        <!-- 결과출력 멘트-->
+                            <span style="font-size: 20px; font-family: 'GangwonEdu_OTFBoldA'; color: #333;">
+                                ${result.resultString}
+                            </span>
+                                <!--확성기 아이콘-->
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
+                                    <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z"/>
+                                </svg> -->
+                        </div>
+                 </div>
+                </div>
             </div>
-
-        </div>
-        <br><br><br>
-
+    </div>
+    </div> 
+	
+	
         <!--발달 확인 기준-->
         <div>
             <div class="container px-4 text-center">
