@@ -635,10 +635,10 @@ progress {
   content: "— ";
 }
 
-/* .img-fluid {
-  max-width: 30%;
+/*.img-fluid {
+  max-width: 50%;
   height: auto;
-} */
+}*/
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -11510,7 +11510,7 @@ html {
   overflow: hidden;
 }
 
-.portfolio .portfolio-item .portfolio-item-caption {
+/*.portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
   top: 0;
   left: 0;

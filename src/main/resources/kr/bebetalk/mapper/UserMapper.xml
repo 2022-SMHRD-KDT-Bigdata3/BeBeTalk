@@ -3,7 +3,7 @@
 <mapper namespace="kr.bebetalk.mapper.UserMapper" >
 
 	<insert id="join" parameterType="kr.bebetalk.entity.User">
-		insert into UserTable(UserID, UserPassword, UserName, UserEmail) values(#{UserID}, #{UserPassword}, #{UserName}, #{UserEmail})
+		insert into UserTable(UserID, UserPassword, UserName, UserEmail) values(#{userID}, #{userPassword}, #{userName}, #{userEmail})
 	</insert>
 	
 </mapper>

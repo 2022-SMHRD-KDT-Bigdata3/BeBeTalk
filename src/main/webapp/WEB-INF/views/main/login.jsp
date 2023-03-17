@@ -65,17 +65,17 @@
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card border-0 shadow rounded-3 my-5">
               <div class="card-body p-4 p-sm-5">
-                <h2 class="card-title text-center mb-5 fw-light fs-5">Login</h2>
-                
+                  <h3 class="card-title text-center">로그인</h3>
+                             
                 <!-- 로그인 form 태그 -->
                 <form id="loginSubmit" action="${cpath}/login.do" method="post">
                 <!-- 아이디, 패스워드 파라미터 값을 login.do로 post방식으로 요청 -->
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="UserID" placeholder="name@example.com">
+                    <input type="text" class="form-control" id="floatingInput" name="userID" placeholder="ID">
                     <label for="floatingInput">ID를 입력해주세요</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" name="UserPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" name="userPassword" placeholder="Password">
                     <label for="floatingPassword">Password를 입력해주세요</label>
                   </div>
                   <div class="form-check mb-3">

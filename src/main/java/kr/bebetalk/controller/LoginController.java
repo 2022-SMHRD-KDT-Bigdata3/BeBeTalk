@@ -65,6 +65,6 @@ public class LoginController {
 	@PostMapping("/logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/boardList.do";
+		return "redirect:/main.do";
 	}
 }

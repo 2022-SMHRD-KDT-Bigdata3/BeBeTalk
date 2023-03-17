@@ -58,10 +58,10 @@
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
 				<c:if test="${!empty uvo}">
 					<li class="nav-item">
-						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/kidsSelect.do" style="font-size: 1em; color: rgb(2, 50, 4);">Test</a>
+						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/childList.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);">Test</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do" style="font-size: 1em; color: rgb(2, 50, 4);">My page</a>
+						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);">My page</a>
 					</li>
 				</c:if>
 								
@@ -93,7 +93,7 @@
 							</p>
 						</div>
 						<h3 style="text-align: left; font-weight: bolder;">
-							<span class="bbt"> 딥러닝을 활용한<br>영유아 표준 음성 분석시스템
+							 <span class="bbt">아이의 작은 목소리에서<br>성장을 봅니다.</span>
 							</span>
 						</h3>
 					</div>
@@ -122,12 +122,13 @@
 					<div class="content-section-heading"
 						style="background-color: rgb(158, 201, 84)">
 						<br>
-						<h2 class="mb-5">Services</h2>
+						<h2 >Services</h2>
+						<h5 style="color: darkgreen;">딥러닝을 활용한 아동음성데이터 연령 분석 서비스</h5><br>
 					</div>
 					<div class="row gx-4 gx-lg-5"
 						style="background-color: rgb(158, 201, 84)">
 						<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-music-note-list"
 									viewBox="0 0 16 16">
@@ -142,12 +143,12 @@
                                     </svg> <i class="icon-screen-smartphone"></i>
 							</span>
 							<h4>
-								<strong style="color: white !important">표준 음성데이터 제공</strong>
+								  <h4><strong style="color: white !important">연령별<br>음성데이터 분석</strong></h4>
 							</h4>
 						</div>
 
 						<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3" s> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-soundwave" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
@@ -155,12 +156,12 @@
                                     </svg> <i class="icon-pencil"></i>
 							</span>
 							<h4>
-								<strong>음성데이터 검사</strong>
+								 <h4><strong>음성 검사</strong></h4>
 							</h4>
 						</div>
 
 						<div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-ui-checks" viewBox="0 0 16 16">
                                         <path
@@ -173,7 +174,7 @@
 						</div>
 
 						<div class="col-lg-3 col-md-6">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg
+							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
                                         <path
