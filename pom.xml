@@ -93,14 +93,14 @@
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
+			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -186,6 +186,33 @@
 
 		
 		   <!-- DB 를 연결하기위한 api --> 
+		   
+		   <!-- servlet , cos -->
+		   
+		 <!-- maven - servlet -->
+	    <dependency>
+	    	<groupId>javax.servlet</groupId>
+	    	<artifactId>javax.servlet-api</artifactId>
+	    	<version>3.1.0</version>
+	    	<scope>provided</scope>
+	    </dependency> 
+	    
+	    <!-- 음성 업로드 하기위한 API 추가 -->
+		<!-- https://mvnrepository.com/artifact/com.jfinal/cos -->
+		<dependency>
+		    <groupId>com.jfinal</groupId>
+		    <artifactId>cos</artifactId>
+		    <version>2020.4</version>
+		</dependency>
+		   
+		    <!-- servlet , cos -->
+
+		<!-- jason 직렬화 -->
+		<dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		  <artifactId>jackson-databind</artifactId>
+		  <version>2.13.1</version>
+		</dependency>
 		
 		
 		

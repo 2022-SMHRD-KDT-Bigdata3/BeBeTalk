@@ -43,8 +43,7 @@
         
     
     
-
-     /* [재생]버튼 색/호버/클릭 효과 */
+ /* [재생]버튼 색/호버/클릭 효과 */
         #myButton {
         background-color: rgb(163, 249, 247);
         color: rgb(37, 29, 29);
@@ -63,39 +62,39 @@
         
 
         /* [녹음]버튼 색/호버/클릭 효과  */
-        #myButton2 {
+        #recordButton {
         background-color: rgb(240, 147, 147);
         color: rgb(37, 29, 29);
         border-radius: 8px;
         font-family: 'GangwonEdu_OTFBoldA';
         }
 
-        #myButton2:hover {
+        #recordButton:hover {
         background-color: rgb(242, 107, 103);
         }
 
-        #myButton2:active {
+        #recordButton:active {
         background-color: rgb(244, 62, 62);
         color: rgb(255, 255, 255);
         }
 
 
         /* [완료] 버튼 색/호버/클릭 효과 */
-        #myButton3 {
+        #stopButton {
         background-color: rgb(221, 240, 147);
         color: rgb(37, 29, 29);
         border-radius: 8px;
         font-family: 'GangwonEdu_OTFBoldA';
         }
 
-        #myButton3:hover {
+        #stopButton:hover {
         background-color: rgb(212, 241, 50);
         }
 
-        #myButton3:active {
+        #stopButton:active {
         background-color: rgb(189, 183, 3);
         color: rgb(255, 255, 255);
-        }    
+        }      
     
 
 

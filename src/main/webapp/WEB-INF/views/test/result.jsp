@@ -181,6 +181,13 @@
 
     
     </style>
+    <script type="text/javascript">
+    	var prediction = sessionStorage.getItem("prediction");
+    	var probability = sessionStorage.getItem("probability");
+    	console.log(prediction +"/" + probability);
+    
+    </script>
+    
 </head>
 
 

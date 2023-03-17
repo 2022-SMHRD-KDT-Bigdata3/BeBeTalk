@@ -10,6 +10,7 @@
   
   <!-- contextpath(유지보수하는데 도움이 됨)를 가지고 오는 방법 -->
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,7 @@
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-		<link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
+<link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
 		
 		<style>
 		/* 검사 순서안내  반응형 센터정렬 */
@@ -107,13 +108,138 @@
 		}
 		</style>
 		
-		<!-- 음성검사 mp3파일 작동 -->
-		<script>
-		        function play(){
-		            var audio = document.getElementById("audio");
-		            audio.play();
-		        }
-		    </script>
+		     
+<script type="text/javascript"> 
+
+	<!-- 음성검사 mp3파일 작동 -->
+	function play(){
+	    var audio = document.getElementById("audio");
+	    audio.play();
+	}
+
+
+     function startRecording() {
+    	    console.log("녹음버튼 클릭!");
+
+    	    // getUserMedia()에서 성공 또는 실패할 때까지 녹화 버튼을 비활성화합니다
+    	    recordButton.disabled = true;
+    	    stopButton.disabled = false;
+
+    	    navigator.mediaDevices.getUserMedia({audio: true, video: false}).then(function(stream) {
+    	        console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
+
+    	        // 저장될 오디오의 sampleRate 조정
+    	        audioContext = new AudioContext({sampleRate: 16000});
+
+    	        // 나중에 사용할 수 있도록 gumStream에 할당
+    	        gumStream = stream;
+
+    	        // use the stream
+    	        input = audioContext.createMediaStreamSource(stream);
+
+    	     	// Recorder 개체를 만들고 모노 사운드를 녹음하도록 구성합니다(1채널). 2채널을 녹음하면 파일 크기가 두 배가 됩니다
+    	        rec = new Recorder(input, {numChannels: 1})
+
+    	        //recording 시작
+    	        rec.record()
+
+    	        console.log("녹음시작!");
+
+    	    }).catch(function(err) {
+    	        //getUserMedia()가 실패할 경우 record 버튼을 활성화합니다
+    	        recordButton.disabled = false;
+    	        stopButton.disabled = true;
+    	    });
+    	}
+     
+     
+     function stopRecording() {
+    	    console.log("녹음완료 버튼 클릭!");
+
+    	    //중지 버튼을 비활성화하고, 레코드를 활성화하여 새 녹화를 허용합니다
+    	    stopButton.disabled = true;
+    	    recordButton.disabled = false;
+
+    	    //녹음중지
+    	    rec.stop(); 
+    	    gumStream.getAudioTracks()[0].stop();
+
+    	    // Wavblob을 생성하여 DownloadLink 생성에 전달합니다
+    	    rec.exportWAV(createDownloadLink);
+    	}
+     
+     function createDownloadLink(blob) { // 음성 다운로드 함수(blob을 파라미터로 활용)
+    	 	const soundClips = document.getElementById('sound-clips');
+    	 
+    	 	// (1) <audio> 태그 담을 컨테이너 객체 생성
+    	 	const clipcontainer = document.createElement('article');
+    	 	
+    	 	// (2) audio 객체 생성 및 속성 설정
+    	    var audio = document.createElement('audio');
+    	    audio.controls = true;
+    	    
+    	    // 오디오를 다운로드 하게된다면 필요한 코드
+    	    //var li = document.createElement('li');
+    	    //var link = document.createElement('a');
+    	    
+    	 	// (3) 컨테이너에 audio 연결
+    	 	clipcontainer.appendChild(audio);
+    	 	
+    	 	// <div>에 <audio> 태그 출력
+            // 이전에 녹음할 때 추가한 childNode가 존재한다면 제거
+            if(soundClips.hasChildNodes())
+                soundClips.removeChild(soundClips.childNodes[0]);
+            // 녹음한 데이터 추가
+            soundClips.appendChild(clipcontainer);
+            
+         	// rec 초기화 (초기화 하지 않으면 녹음 내용이 누적 저장됨)
+            rec = [];
+
+         	// audio 소스 지정
+         	var url = URL.createObjectURL(blob);
+         	audio.src = url;
+         	
+    	    //업로드 및 다운로드 중에 사용할 파일 이름(확장자 없음)
+    	    var filename ="Voice";
+    	    console.log("audio");
+    	    console.log(audio);
+    	    console.log(blob);
+    	    
+    	    const formData = new FormData(); //formData 객체 생성
+    	    const file = new File([blob], filename+".wav"); // blob오디오를 filename 으로 지정하여 file에 담아줌
+    	    formData.append("file", file); // formData에 append
+    	   
+    	    
+    	    $.ajax({ //url이 test1-2인 flask로 음성을 보내는 ajax
+            	url : "http://127.0.0.1:5001/test1_2",
+            	type : "POST",
+            	data : formData,
+            	contentType : false,
+            	processData : false,
+            	success : function(data){ console.log(data); },
+            	error : function(e){ console.log(e); }
+            });
+    	    
+    	    /*
+    	    //컴퓨터에 저장할 링크
+    	    link.href = url;
+    	    link.download = filename+".wav"; // 확장자설정
+    	    link.innerHTML = "Save to disk";
+
+    	    //li 에 audio 요소를 추가한다
+    	    li.appendChild(audio);
+    	    
+    	    // li에 파일이름 추가
+    	    li.appendChild(document.createTextNode(filename+".wav"))
+
+    	    // 다운로드 링크 추가
+    	    li.appendChild(link);
+
+    	    // ol태그에 li태그르 append
+    	    recordingsList.appendChild(li);*/
+    	}
+</script> 
+  
 		</head>
 		
 		<body>
@@ -219,7 +345,7 @@
 		
 				<!-- 녹음 버튼-->
 				<img class="recode" src="resources/assets/img/녹음.png">
-				<button id="myButton2" type="button" type="button">녹음</button>
+				<button id="recordButton" type="button" type="button">녹음</button>
 		
 				<!-- 순서 화살표 -->
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -232,10 +358,14 @@
 		        </svg>
 		
 				<!-- 녹음완료 버튼-->
-				<img class="stop" src="resources/assets/img/정지.png">
-				<button id="myButton3" type="button">완료</button>
-				<br>
-				<br>
+	            <img class="stop" src="resources/assets/img/정지.png">
+	            <button id="stopButton" type="button">완료</button>
+	            <br>
+	            <div id="sound-clips"> 
+	            	<ol id="recordingsList"></ol>
+	            </div> 
+	            <br>
+	            <br>
 		
 				<!--음성검사 녹음 방법 안내 -->
 				<div class="container"
@@ -247,7 +377,7 @@
 					<br>
 					<h5>1. [재생] 버튼을 누르시면 테스트 음성이 재생됩니다.</h5>
 					<h5>2. [녹음] 버튼을 누른 후 아이의 음성을 녹음해주세요</h5>
-					<h5>3. [정지] 버튼을 누르면 녹음이 완료됩니다.</h5>
+					<h5>3. [완료] 버튼을 누르면 녹음이 완료됩니다.</h5>
 					<h5>4. [다음] 버튼을 누르시면 다음 검사페이지로 이동합니다.</h5>
 					<br>
 					</content>
@@ -312,6 +442,8 @@
 			<script
 				src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 			<!-- Core theme JS-->
-			<script src="js/scripts.js"></script>
+        <script src="${cpath}/resources/js/scripts.js"></script>
+        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    	<script src="${cpath}/resources/js/app.js"></script>
 		</body>
 		</html>
