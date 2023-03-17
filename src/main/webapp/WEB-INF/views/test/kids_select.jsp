@@ -183,8 +183,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/result.do" style="font-size: 1em; color: rgb(2, 50, 4);"> RESULT </a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?userID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE</a></li>
                     </ul>
                 </div>
             </div>
@@ -274,24 +273,9 @@
                         <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">${list.get(0).testKidsNick} 
                             <input type="radio" name=check value="현아" style="margin-top: 10px; margin-left: 15px;"></p>
 			</c:if>
-
-<!--                         프로필2 -->
-<!--                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2"> -->
-<!--                             <div -->
-<!--                                 class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"> -->
-<!--                                 <div class="portfolio-item-caption-content text-center text-white"> -->
-<!--                                 <i class="fas fa-plus fa-3x"></i></div> -->
-<!--                             </div> -->
-<!--                             <img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필3.jpg" alt="..." /> -->
-<!--                         </div> -->
-<!--                         등록된 아이 출력 -->
-<!--                         <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">유나니 -->
-<!--                             <input type="radio" name=check value="유나니" style="margin-top: 10px; margin-left: 15px;"> -->
-<!--                         </p> <br> -->
-<!--                         <div class="post-preview"> -->
-
-
-
+			
+			
+			
                         <h4 class="post-meta">
                            🎤조용한 환경에서 음성테스트를 진행해주세요
                         </h4>
@@ -313,7 +297,7 @@
                                         d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                 </svg>
                             </button>
-                        <!-- </div><br> -->
+                        </div><br>
                     </form>
                     <script>
                         document.querySelector('form').addEventListener('submit', function(e) {

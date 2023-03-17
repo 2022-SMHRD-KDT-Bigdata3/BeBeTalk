@@ -36,16 +36,9 @@ public class ChildList {
 				
 		List<Testee> list = mapper.childList(tt);
 		
-		System.out.println("list ID" + list.get(0).getTesteeID());
-		System.out.println(list.get(0).getTestKidsNick());
-		System.out.println(list.get(0).getTesteeBirth());
-		System.out.println(list.get(0).getTesteeSex());
-		
 		model.addAttribute("list", list);
 		
 		return "test/kids_select";
-		// POJO는 경로를 넘겨주기 때문에 return 타입은 String
-	}
-	
+	}	
 
 }

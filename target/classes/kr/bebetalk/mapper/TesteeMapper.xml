@@ -7,10 +7,14 @@
 		insert into TesteeTable(TesteeID, TestKidsNick, TesteeBirth, TesteeSex) values( #{testeeID}, #{testKidsNick}, #{testeeBirth}, #{testeeSex})
 	</insert>
 	
-	<!-- 내 아이 목록 불러오기 -->
+	<!-- 내 아이 목록 불러오기 _ 자녀선택페이지 -->
 	<select id = "childList" parameterType="kr.bebetalk.entity.Testee" resultType="kr.bebetalk.entity.Testee">
 		select * from TesteeTable where TesteeID = #{testeeID}
 	</select>
 	
+	<!-- 내 아이 목록 불러오기 _ 마이페이지 -->
+	<select id = "myList" parameterType="kr.bebetalk.entity.Testee" resultType="kr.bebetalk.entity.Testee">
+		select * from TesteeTable where TesteeID = #{testeeID}
+	</select>
 	
 </mapper>

@@ -10,9 +10,13 @@ public interface TesteeMapper {
 	
 	// 아이 등록
 	public void childInsert(Testee tt);
-	
-	
-	// 아이 목록 불러오기
+
+	// 자녀 선택 페이지 아이 목록 불러오기
 	public List<Testee> childList(Testee tt);
+	
+	// 마이 페이지 아이 목록 불러오기
+	public List<Testee> myList(Testee tt);
+
+
 
 }
