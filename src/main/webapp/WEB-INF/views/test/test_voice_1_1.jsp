@@ -11,8 +11,6 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -240,12 +238,9 @@
     	    recordingsList.appendChild(li);*/
     	}
 </script>          
-          
-      </head>
+</head>
       
-      
-      
-      <body>
+<body>
          <!-- 상단: 로고와 메뉴-->
          <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -260,12 +255,10 @@
                </button>
                <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/childList.do?testeeID=${uvo.userID}"
+                     style="font-size: 1em; color: black;">TEST</a></li>
                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                        href="${cpath}/kidsSelect.do"
-                        style="font-size: 1em; color: black;">TEST</a></li>
-                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                        href="${cpath}/myPage.do" style="font-size: 1em; color: black;">MY
-                           PAGE</a></li>
+                        href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: black;">MY PAGE</a></li>
                   </ul>
                </div>
             </div>
@@ -440,5 +433,4 @@
         <script src="${cpath}/resources/js/app.js"></script>
     	
       </body>
-      
-      </html>
+</html>

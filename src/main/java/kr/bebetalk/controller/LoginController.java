@@ -33,7 +33,10 @@ public class LoginController {
 		User uvo = mapper.loginCheck(vo);
 		if(uvo != null) { // 로그인 성공했을 시에만 로그인 정보 session에 저장
 			session.setAttribute("uvo", uvo);
+			
 			System.out.println("로그인 완료");
+			System.out.println(uvo.getUserID());
+			
 			return "redirect:/main.do";
 		}else {
 			return "redirect:/login.do";
@@ -44,10 +47,7 @@ public class LoginController {
 	public String join() {
 		return "main/join"; // join.jsp로 연결
 	}
-	
-//	@PostMapping("/checkId.do")
-//	public String 
-	
+
 	@PostMapping("/join.do")
 	public String join(User vo) {
 		System.out.println("id : " + vo.getUserID());
@@ -65,6 +65,6 @@ public class LoginController {
 	@PostMapping("/logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/boardList.do";
+		return "redirect:/main.do";
 	}
 }

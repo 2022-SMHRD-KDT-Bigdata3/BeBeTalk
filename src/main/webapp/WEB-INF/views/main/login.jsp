@@ -71,11 +71,11 @@
                 <form id="loginSubmit" action="${cpath}/login.do" method="post">
                 <!-- 아이디, 패스워드 파라미터 값을 login.do로 post방식으로 요청 -->
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="UserID" placeholder="name@example.com">
+                    <input type="text" class="form-control" id="floatingInput" name="userID" placeholder="ID">
                     <label for="floatingInput">ID를 입력해주세요</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" name="UserPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" name="userPassword" placeholder="Password">
                     <label for="floatingPassword">Password를 입력해주세요</label>
                   </div>
                   <div class="form-check mb-3">

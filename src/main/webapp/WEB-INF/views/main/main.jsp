@@ -58,10 +58,10 @@
 				<ul class="navbar-nav ms-auto py-4 py-lg-0">
 				<c:if test="${!empty uvo}">
 					<li class="nav-item">
-						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/kidsSelect.do" style="font-size: 1em; color: rgb(2, 50, 4);">Test</a>
+						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/childList.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);">Test</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do" style="font-size: 1em; color: rgb(2, 50, 4);">My page</a>
+						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);">My page</a>
 					</li>
 				</c:if>
 								

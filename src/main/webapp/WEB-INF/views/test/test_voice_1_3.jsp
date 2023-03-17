@@ -275,13 +275,8 @@
            recordingsList.appendChild(li);*/
        }
      
-     
-  
-     
-     
-     
-   
 </script>           
+
 
    </head>
    
@@ -300,10 +295,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ms-auto py-4 py-lg-0">
                   <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                     href="${cpath}/kidsSelect.do"
+                     href="${cpath}/childList.do?testeeID=${uvo.userID}"
                      style="font-size: 1em; color: black;"> TEST </a></li>
                   <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                     href="${cpath}/myPage.do" style="font-size: 1em; color: black;">
+                     href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: black;">
                         MY PAGE </a></li>
                </ul>
             </div>
@@ -403,6 +398,7 @@
          <img class="stop" src="resources/assets/img/정지.png">
          <button id="stopButton" type="button">완료</button>
          <br>
+
             <div id="sound-clips"> 
                <ol id="recordingsList"></ol>
             </div> 

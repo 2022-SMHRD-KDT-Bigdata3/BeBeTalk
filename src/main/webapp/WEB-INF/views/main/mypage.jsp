@@ -10,6 +10,8 @@
   <!-- contextpath(유지보수하는데 도움이 됨)를 가지고 오는 방법 -->
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
+<!-- jQuery -->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,10 +62,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/kidsSelect.do"
-                            style="font-size: 1em;color: rgb(2, 50, 4);"> TEST </a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do"
-                            style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE </a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/childList.do?testeeID=${uvo.userID}" style="font-size: 1em;color: rgb(2, 50, 4);"> TEST </a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE </a></li>
                 </ul>
             </div>
         </div>
@@ -88,7 +88,7 @@
     <!--로그인된 회원 이름 보여주기-->
     <section>
         <div class="container px-5 " style="padding-top:40px;">
-            <h1>"홍길동"님 환영합니다.</h1>
+            <h1>${uvo.userName}님 환영합니다.</h1>
         </div>
     </section>
 
@@ -102,43 +102,34 @@
             </div>
             <div class="row gx-5 align-items-center"></div>
             <div class="row row-cols-1 row-cols-sm-3 g-4" style="padding: 1px 1px 50px 1px;">
-                <div class="col">
-                    <div class="card">
-                        <img src="resources/assets/img/아이선택페이지_프로필1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body ">
-                            <h5 class="card-title text-center">"경워니"</h5>
-                            <p class="card-text text-center"> 4세 / 여 </p>
-                            <button type="button" class="btn btn-default btn-sm text-white"
-                                style="background-color:#228B22; float: right; border-radius: 10px;">삭제</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="resources/assets/img/아이선택페이지_프로필3.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">"유나니"</h5>
-                            <p class="card-text text-center"> 5세 / 남 </p>
-                            <button type="button" class="btn btn-default btn-sm text-white"
-                               style="background-color:#228B22; float: right; border-radius: 10px;">삭제</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="resources/assets/img/아이선택페이지_프로필3.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">"은지니"</h5>
-                            <p class="card-text text-center"> 6세 / 여 </p>
-                            <button type="button" class="btn btn-default btn-sm text-white"
-                                style="background-color:#228B22; float: right; border-radius: 10px;">삭제</button>
-
-                        </div>
-                    </div>
-                </div>
+                
+                <!-- 애기 목록 시작 -->
+            <c:if test="${!empty myList}">
+	            <c:forEach var="vo" items="${myList}">
+	                <div class="col">
+	                    <div class="card">
+	                        <c:if test="${vo.testeeSex == '남'}">
+		                       <img src="resources/assets/img/아이선택페이지_프로필1.jpg" class="card-img-top" alt="...">	                            
+		                    </c:if>
+		                    <c:if test="${vo.testeeSex == '여'}">
+		                    	<img src="resources/assets/img/아이선택페이지_프로필3.jpg" class="card-img-top" alt="...">
+		                    </c:if>
+	                        <div class="card-body">
+	                            <h5 class="card-title text-center"> ${vo.testKidsNick} </h5>
+	                            <p class="card-text text-center"> ${vo.testeeBirth} / ${vo.testeeSex} </p>
+	                            <button type="button" class="btn btn-default btn-sm text-white"
+	                                style="background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
+	                        </div>
+	                    </div>
+	                </div>
+                </c:forEach>
+             </c:if>
+            <!-- 애기 목록 끝 -->
+                
             </div>
         </div>
     </section>
+    
     <section class="page-section bg-light">
         <div class="container">
             <div class="p-2" style="margine-top: 100px;">

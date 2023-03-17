@@ -257,10 +257,10 @@
 					<div class="collapse navbar-collapse" id="navbarResponsive">
 						<ul class="navbar-nav ms-auto py-4 py-lg-0">
 							<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-								href="${cpath}/kidsSelect.do"
+								href="${cpath}/childList.do?testeeID=${uvo.userID}"
 								style="font-size: 1em; color: black;"> TEST </a></li>
 							<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-								href="${cpath}/myPage.do" style="font-size: 1em; color: black;">
+								href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: black;">
 									MY PAGE </a></li>
 						</ul>
 					</div>

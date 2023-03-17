@@ -183,8 +183,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/result.do" style="font-size: 1em; color: rgb(2, 50, 4);"> RESULT </a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do" style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE</a></li>
                     </ul>
                 </div>
             </div>
@@ -256,75 +255,64 @@
                 <!-- 기능: 아이 카드 클릭시 아이정보를 가지고 검사하러 가기 -->
                 <!-- 아이선택카드 -->
             <div class="row justify-content-center" style="text-align: center; border-radius: 20px;padding-top:;">
-                <!-- 프로필1-->
-                <div style="text-align: center; margin-top: 10px;">
-                    <form action="" method="post">
-                      <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i
-                                        class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <a href="./test_voice.html"><img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필1.jpg"/></a>
-                        </div>
+            
+           <form>
+	            <!-- DB에 저장된 만큼 for문 -->
+	            <c:if test="${!empty list}">
+		            <c:forEach var="vo" items="${list}">
+		            
+		                <!-- 프로필 시작 -->
+		                <div style="text-align: center; margin-top: 10px;">
+		                      <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+		                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		                                <div class="portfolio-item-caption-content text-center text-white"><i
+		                                        class="fas fa-plus fa-3x"></i></div>
+		                            </div>
+		                            
+		                            <c:if test="${vo.testeeSex == '남'}">
+		                            	<img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필1.jpg"/></a>	                            
+		                            </c:if>
+		                            <c:if test="${vo.testeeSex == '여'}">
+		                           		<img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필3.jpg"/></a>	                            
+		                            </c:if>
+		                        </div>
+		
+		                        <!--등록된 아이 출력-->
+		                        <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';"> ${vo.testKidsNick} 
+		                            <input type="radio" name=check value="${vo.testKidsNick}" style="margin-top: 10px; margin-left: 15px;">
+		                        </p>
+		                </div>
+	                </c:forEach>
+				</c:if>
+		                <!-- 프로필 끝 -->
+			
 
-                        <!--등록된 아이 출력-->
-                        <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">혀나 
-                            <input type="radio" name=check value="현아" style="margin-top: 10px; margin-left: 15px;"></p>
-
-
-                        <!-- 프로필2-->
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div
-                                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필3.jpg" alt="..." />
-                        </div>
-                        <!--등록된 아이 출력-->
-                        <p style="text-align: center; font-family: 'GangwonEdu_OTFBoldA';">유나니
-                            <input type="radio" name=check value="유나니" style="margin-top: 10px; margin-left: 15px;">
-                        </p> <br>
-                        <div class="post-preview">
-<%--                         <a href="${cpath}/testVoice1.do"> --%>
-<!--                             <h2 class="post-title">음성테스트를 진행하시겠습니까?</h2> -->
-<!--                         </a> -->
                         <h4 class="post-meta">
                            🎤조용한 환경에서 음성테스트를 진행해주세요
                         </h4>
                         <br><br>
-                    </div>
-                            <button type="submit" class="btn btn-outline-success" name="button1" style="font-family:'GangwonEdu_OTFBoldA';">바다테마<br>음성검사하기
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                                
+          
+	                    
+                            <button type="button" class="btn btn-outline-success theme1" name="button1" style="font-family:'GangwonEdu_OTFBoldA';">
+	                            바다테마 <br>음성검사하기
+	                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+	                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+	                                    <path fill-rule="evenodd"
+	                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+	                                </svg>
                             </button>
+                            
                             <div class="space"></div>
-                            <button type="submit" class="btn btn-outline-success" name="button2" style="font-family:'GangwonEdu_OTFBoldA';">꽃밭테마<Br>음성검사하기
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
+                            
+                            <button type="button" class="btn btn-outline-success theme2" name="button2" style="font-family:'GangwonEdu_OTFBoldA';">
+	                            꽃밭테마 <Br>음성검사하기
+	                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+	                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+	                                    <path fill-rule="evenodd"
+	                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+	                                </svg>
                             </button>
-                        <!-- </div><br> -->
-                    </form>
-                    <script>
-                        document.querySelector('form').addEventListener('submit', function(e) {
-                          e.preventDefault(); // 기본 submit 이벤트 중지
-                          
-                          // 버튼 구분
-                          var buttonName = e.submitter.name;
-                          if (buttonName === 'button1') {
-                            window.location.href = '${cpath}/testVoice1-1.do'; // 버튼1을 클릭한 경우 페이지1로 이동
-                          } else if (buttonName === 'button2') {
-                            window.location.href = '${cpath}/testVoice2-1.do'; // 버튼2를 클릭한 경우 페이지2로 이동
-                          }
-                        });
-                      </script>
+	         		</form>
                 </div>
             </div>
         </section>
@@ -336,22 +324,30 @@
                 <div class="modal-window">
                     <div class="close-area">X</div><br>
                         <div class="content">
-                            <form name="input" method="post" action="" style="text-align: center; font-family: 'GangwonEdu_OTFBoldA;'">
+                        
+                        <!-- 아이 등록 시작 -->
+                            <form method="post" action="${cpath}/childInsert.do" style="text-align: center; font-family: 'GangwonEdu_OTFBoldA;'">
+                            	<!-- 로그인 한 보호자의 ID 가져오기 -->
+                            	<input type="hidden" name="testeeID" value="${uvo.userID}"/>
+                            	<!-- 아이 애칭 입력 -->
                                 <label for="childrenNickname" style="font-family: 'GangwonEdu_OTFBoldA;'">아이의 애칭을 입력해주세요</label>
-                                <input type="text" name="memberName" maxlength="5"><br><br>
-                                <form name="input" method="post" action="">
+                                <input type="text" name="testKidsNick" maxlength="5"><br><br>
+                                                                
+                            	<!-- 아이 생년 입력 -->
                                 <label for="childrenbirth" style="font-family: 'GangwonEdu_OTFBoldA;'">아이의 출생년도를 선택해주세요</label>
-                                <select>
-                                    <option value="birthYear23" selected="selected">&nbsp;2023년</option>
-                                    <option value="birthYear22">&nbsp;2022년</option>
-                                    <option value="birthYear21">&nbsp;2021년</option>
-                                    <option value="birthYear20">&nbsp;2020년</option>
-                                    <option value="birthYear19">&nbsp;2019년</option>
+                                <select name="testeeBirth">
+                                    <option value="2023년생" selected="selected">&nbsp;2023년</option>
+                                    <option value="2022년생">&nbsp;2022년</option>
+                                    <option value="2021년생">&nbsp;2021년</option>
+                                    <option value="2020년생">&nbsp;2020년</option>
+                                    <option value="2019년생">&nbsp;2019년</option>
+                                    <option value="2018년생">&nbsp;2018년</option>
                                 </select>
                                 <br><br>
-                                <label for="childrenSex" style="font-family:'GangwonEdu_OTFBoldA;'">성별</label>&nbsp;&nbsp;&nbsp;
-                                남<input type="radio" name="chk_info" value="male">&nbsp;&nbsp;&nbsp;  
-                                여<input type="radio" name="chk_info" value="female"><br><br>  
+                                <label for="childrenSex" style="font-family:'GangwonEdu_OTFBoldA;'"> 아이의 성별을 선택해주세요 </label>
+								<br>
+                                남<input type="radio" name="testeeSex" value="남">&nbsp;&nbsp;&nbsp;  
+                                여<input type="radio" name="testeeSex" value="여"><br><br>  
                                 <input class="child_summit" type="submit" value="전송">
                             </form>
                          
@@ -426,6 +422,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts1.js"></script>
+    
+    <script type="text/javascript">
+    
+	 // 바다테마 버튼 클릭 이벤트 리스너 등록
+	    document.querySelector('.theme1').addEventListener('click', function() {
+	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
+	    console.log(selectedValue);
+	    var xhr = new XMLHttpRequest();
+	    xhr.open('POST', '${cpath}/testVoice1-1.do');
+	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	    xhr.onload = function() {
+	    console.log('Data sent');
+	    // 페이지 이동
+	    window.location.href = '${cpath}/test_voice_1_1.do';
+	    };
+	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
+	    });
+	
+	 // 꽃밭테마 버튼 클릭 이벤트 리스너 등록
+	    document.querySelector('.theme2').addEventListener('click', function() {
+	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
+	    var xhr = new XMLHttpRequest();
+	    xhr.open('POST', '${cpath}/testVoice2-1.do');
+	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	    xhr.onload = function() {
+	    console.log('Data sent');
+	 // 페이지 이동
+	    window.location.href = '${cpath}/test_voice_2_1.do';
+	    };
+	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
+	    });
+	     
+    </script>
+    
 </body>
 
 </html>

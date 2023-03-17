@@ -168,32 +168,6 @@
         <script src="${cpath}/resources/js/scripts.js"></script>
         
         <script type="text/javascript">
-        
-        $("#_btnGetId").click(function () {
-        	// id첵크	
-        	$.ajax({
-        		url:"checkId.do",
-        		type:"post",
-        		data:{ id:$("#floatingInputUsername").val() },
-        		success:function( msg ){
-        		//	alert('success');
-        		//	alert(msg);
-        			if(msg == 'YES'){
-        				$("#_rgetid").html("사용할 수 없는 아이디입니다");
-        				$("#_rgetid").css("background-color", "#ff0000");
-        				$("#floatingInputUsername").val("");
-        			}else{
-        				$("#_rgetid").html("이 ID는 사용할 수 있습니다");
-        				$("#_rgetid").css("background-color", "#0000ff");
-        			}
-        		},
-        		error:function(){
-        			alert('error');
-        		}
-        	});
-        	
-        	
-        });
 
         $("#_btnJoin").click(function () {
         	// 회원가입
