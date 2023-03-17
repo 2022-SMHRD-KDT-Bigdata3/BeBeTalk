@@ -316,7 +316,7 @@
 		
 			<!-- 검사관련 동영상 송출 -->
 			<div class="container" style="width: 2400px;">
-				<video muted autoplay loop>
+				<video autoplay loop>
 					<source src="resources/assets/img/꽃밭,나비.mp4" type="video/mp4">
 					<strong>Your browser does not support the video tag.</strong>
 				</video>

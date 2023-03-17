@@ -1,5 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Fredoka+One");
 
+ /* 로딩이미지 덮는 이미지 */
+        #waiting {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        display: flex;
+        background: white;
+        z-index: 999;
+          opacity: 1;
+    }
+    
+    /*
+    
+    
+    #waiting > img {
+		margin-top:100px;
+        display: flex;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+    }
+ */
+ 
+ 
+ .infotext{
+ 	height: 30px;
+ 	
+ }
+ 
+ 
 .store-container {
   line-height:0;
   margin: 50px auto;
