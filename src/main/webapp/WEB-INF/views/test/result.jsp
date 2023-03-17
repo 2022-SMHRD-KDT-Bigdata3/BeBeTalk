@@ -107,7 +107,7 @@
 	    font-family: ;
 	    background-color: #f7f7f7;
 	   }
-	     
+	     z
       /* 칠판 스타일 */
       .blackboard {
         /* width: 700px; */
@@ -118,8 +118,7 @@
         padding-top: 0%;
         position: relative;
       }
-      
-      
+            
       /* 검사결과창 스타일 */
       .result-box {
         /* width: 700px;
