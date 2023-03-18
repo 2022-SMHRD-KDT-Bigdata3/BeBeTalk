@@ -2,11 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="kr.bebetalk.mapper.EvaluationMapper" >
 
-	<!-- 평가 추가 -->
-	<insert id="newEva">
-		insert into EvaluationTable(EvaluationDate, EvaluationName) values(NOW(), #{evaluationName})
-	</insert>
-	
 	<!-- 새로 시작한 평가 불러오기 -->
 	<select id="getEva" resultType="kr.bebetalk.entity.Evaluation">
 		select * from EvaluationTable 
@@ -14,5 +9,11 @@
 				 order by EvaluationDate desc
 				 limit 1
 	</select>
+	
+	<!-- 아이 검사 결과 업데이트 -->
+<!-- 	<update id="updateRes" parameterType="kr.bebetalk.entity.EvaluationResult"> -->
+<!-- 			UPDATE EvaluationTable SET EvaluationResult = #{resultString} -->
+<!-- 								 WHERE EvaluationNum = #{evaluationNum} -->
+<!-- 	</update> -->
 	
 </mapper>

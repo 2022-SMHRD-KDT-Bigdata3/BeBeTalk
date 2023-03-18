@@ -2,6 +2,8 @@ package kr.bebetalk.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,13 +34,23 @@ public class ChildList {
 	}
 	
 	@RequestMapping("/childList.do")
-	public String childList(Testee tt, Model model) {
-				
-		List<Testee> list = mapper.childList(tt);
+	public String childList(Testee tt, Model model, HttpSession session) {
+		System.out.println("tt 값 :: " + tt);
+		List<Testee> list;
+		
+		if(tt.getTesteeID() == null) {
+			// 세션에서 로그인 사용자 정보를 가져옴
+			String userID = (String) session.getAttribute("userID");
+			System.out.println("세션 값 :: "+ userID);
+			tt.setTesteeID(userID);
+			list = mapper.childList(tt);
+		} else {
+			list = mapper.childList(tt);			
+		}
 		
 		model.addAttribute("list", list);
 		
 		return "test/kids_select";
 	}	
-
+	
 }
