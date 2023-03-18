@@ -624,7 +624,6 @@
          
    </div>
 
-      
       <!-- Footer-->
       <footer class="border-top">
          <div class="container px-4 px-lg-5">

@@ -21,7 +21,7 @@ public class ChildList {
 	
 	
 	@PostMapping("/childInsert.do")
-	private String childInsert(Testee tt) {
+	private String childInsert(Testee tt, HttpSession session) {
 		System.out.println(tt.getTesteeID());
 		System.out.println(tt.getTestKidsNick());
 		System.out.println(tt.getTesteeBirth());
@@ -29,6 +29,9 @@ public class ChildList {
 		mapper.childInsert(tt);
 		
 		System.out.println("아이 추가 성공");
+		
+		// 사용자 정보를 세션에 저장
+		session.setAttribute("userID", tt.getTesteeID());
 		
 		return "redirect:/childList.do";
 	}
