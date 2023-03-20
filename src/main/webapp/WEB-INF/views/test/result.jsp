@@ -102,12 +102,12 @@
         }
 
 
-	   /* 배경색 지정 */
-	   body {
-	    font-family: ;
-	    background-color: #f7f7f7;
-	   }
-	     z
+      /* 배경색 지정 */
+      body {
+       font-family: ;
+       background-color: #f7f7f7;
+      }
+        
       /* 칠판 스타일 */
       .blackboard {
         /* width: 700px; */
@@ -118,7 +118,8 @@
         padding-top: 0%;
         position: relative;
       }
-            
+      
+      
       /* 검사결과창 스타일 */
       .result-box {
         /* width: 700px;
@@ -181,9 +182,9 @@
     
     </style>
     <script type="text/javascript">
-    	var prediction = sessionStorage.getItem("prediction");
-    	var probability = sessionStorage.getItem("probability");
-    	console.log(prediction +"/" + probability);
+       var prediction = sessionStorage.getItem("prediction");
+       var probability = sessionStorage.getItem("probability");
+       console.log(prediction +"/" + probability);
     
     </script>
     
@@ -272,7 +273,7 @@
                   <div class="inBox"> 
                       <div class="mark">
                       </div> 
-                        <p style="font-size: 2.3em; color: rgb(245, 130, 7); font-family: 'Gaegu'; font-weight: 38;">베베톡 결과 안내<br>
+                        <p style="font-size: 2.3em; color: rgb(245, 130, 7); font-family: 'Gaegu'; font-weight: 38;"> 결과와 솔루션 안내<br>
                         <img src="resources/assets/img/아이선택페이지_프로필1.jpg" style="width:200px; height: 200px; margin-bottom: -32px;" />
                         <!--결과출력 텍스트 박스--> 
                         <div class="textbox"> <br>
@@ -290,8 +291,8 @@
             </div>
     </div>
     </div> 
-	
-	
+   
+   
         <!--발달 확인 기준-->
         <div>
             <div class="container px-4 text-center">

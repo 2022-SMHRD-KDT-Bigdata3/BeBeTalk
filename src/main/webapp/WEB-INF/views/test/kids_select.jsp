@@ -29,8 +29,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
-      <!-- <link href="${cpath}/resources/css/styles2.css" rel="stylesheet" />--> 
-       <!--  <link href="${cpath}/resources/css/styles2.css" rel="stylesheet"/>--> 
+        <!-- <link href="${cpath}/resources/css/styles2.css" rel="stylesheet"/>--> 
         <link href="${cpath}/resources/css/result.css" rel="stylesheet"/>
 
 
@@ -163,11 +162,7 @@
                  display: inline-block;
             }
             
-            <!--프로필 이미지 크기조절-->
-           /* .img-fluid {
- 				 max-width: 50%;
- 				 height: auto;
-				} */
+              
         </style>
     </head>
 
@@ -346,8 +341,8 @@
                                 <br><br>
                                 <label for="childrenSex" style="font-family:'GangwonEdu_OTFBoldA;'"> 아이의 성별을 선택해주세요 </label>
 								<br>
-                                남<input type="radio" name="testeeSex" value="남">&nbsp;&nbsp;&nbsp;  
-                                여<input type="radio" name="testeeSex" value="여"><br><br>  
+                                남 &nbsp;<input type="radio" name="testeeSex" value="남">&nbsp;&nbsp;&nbsp;&nbsp;
+                                여 &nbsp;<input type="radio" name="testeeSex" value="여"><br><br>  
                                 <input class="child_summit" type="submit" value="전송">
                             </form>
                          

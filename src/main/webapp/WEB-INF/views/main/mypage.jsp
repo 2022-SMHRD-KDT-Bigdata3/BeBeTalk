@@ -1,7 +1,6 @@
 <%@page import="kr.bebetalk.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+    pageEncoding="UTF-8"%>    
      <!-- jstl 태그들은 다른 태그들과 충돌이 날 수 있기 때문에 접두사로 c를 붙여준다! -->
   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
   <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
@@ -22,6 +21,7 @@
     <meta name="viewport" content="width=640, user-scalable=yes">
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta charset="UTF-8">
     <title> BeBeTalk </title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -88,7 +88,7 @@
     <!--로그인된 회원 이름 보여주기-->
     <section>
         <div class="container px-5 " style="padding-top:40px;">
-            <h1>${uvo.userName}님 환영합니다.</h1>
+            <h4>${uvo.userName}님 환영합니다.</h4>
         </div>
     </section>
 
@@ -118,7 +118,7 @@
 	                            <h5 class="card-title text-center"> ${vo.testKidsNick} </h5>
 	                            <p class="card-text text-center"> ${vo.testeeBirth} / ${vo.testeeSex} </p>
 	                            <button type="button" class="btn btn-default btn-sm text-white"
-	                                style="background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
+	                                style=" font-family: 'GangwonEdu_OTFBoldA'; background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
 	                        </div>
 	                    </div>
 	                </div>
