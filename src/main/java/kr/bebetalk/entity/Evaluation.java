@@ -10,5 +10,7 @@ public class Evaluation {
 	private String evaluationNum; // 평가 번호
 	private Date evaluationDate; // 평가 날짜
 	private String evaluationName; // 피검사자 닉네임(아이 애칭)
-	private String evaluationResult; // 평가 결과
+	private String evaluationResult_1; // 평가 결과
+	private String evaluationResult_2; // 평가 결과
+	
 }

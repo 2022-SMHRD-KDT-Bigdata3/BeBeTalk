@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="kr.bebetalk.mapper.EvaluationMapper" >
 
-	<!-- 새로 시작한 평가 불러오기 -->
+	
+	<!-- 시작된 평가 불러오기 -->
 	<select id="getEva" resultType="kr.bebetalk.entity.Evaluation">
 		select * from EvaluationTable 
 			 	 where EvaluationName = #{evaluationName}
@@ -10,10 +11,24 @@
 				 limit 1
 	</select>
 	
-	<!-- 아이 검사 결과 업데이트 -->
-<!-- 	<update id="updateRes" parameterType="kr.bebetalk.entity.EvaluationResult"> -->
-<!-- 			UPDATE EvaluationTable SET EvaluationResult = #{resultString} -->
-<!-- 								 WHERE EvaluationNum = #{evaluationNum} -->
-<!-- 	</update> -->
+	<!-- 테스트 이전 결과 모두 불러오기 -->
+	<select id="evList" resultType="kr.bebetalk.entity.Evaluation">
+		SELECT EvaluationTable.* FROM EvaluationTable
+			  JOIN TesteeTable ON EvaluationTable.EvaluationName = TesteeTable.TestKidsNick
+			  WHERE TesteeTable.TesteeID = #{testeeID}
+			  order by EvaluationDate desc
+	</select>
+
+	<!-- 아이 검사 결과 업데이트 _ 메인-->
+	<update id="upMain" parameterType="kr.bebetalk.entity.EvaluationResult">
+		UPDATE EvaluationTable SET  EvaluationDate = NOW(), EvaluationResult_1 = #{evaluationResult}
+							 WHERE EvaluationNum = #{evaluationNum}
+	</update>
+	
+	<!-- 아이 검사 결과 업데이트 _ 서브 -->
+	<update id="upSub" parameterType="kr.bebetalk.entity.EvaluationResult">
+		UPDATE EvaluationTable SET EvaluationResult_2 = #{evaluationResult}
+							 WHERE EvaluationNum = #{evaluationNum}
+	</update>
 	
 </mapper>

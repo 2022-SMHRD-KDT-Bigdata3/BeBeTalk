@@ -4,37 +4,44 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mysql.cj.Session;
-
 import kr.bebetalk.entity.Evaluation;
+import kr.bebetalk.entity.Testee;
 import kr.bebetalk.mapper.EvaluationMapper;
+import kr.bebetalk.mapper.TesteeMapper;
 
 @Controller
 public class TestController {
 	
 	@Autowired
 	private EvaluationMapper mapper;
+	@Autowired
+	private TesteeMapper mapper2;
 	
 	@PostMapping("/testVoice1-1.do")
-	public String receive1(@RequestParam("selectedValue") String selectedValue, HttpSession session) {
+	public String receiveDataFromClient(@RequestParam("selectedValue") String selectedValue, HttpSession session) {
 		System.out.println("controller 값 : " + selectedValue);
+		
 		mapper.newEva(selectedValue);
-		System.out.println("새로운 평가 시작1");
+		System.out.println("새로운 평가 시작");
+		
 		Evaluation ev = mapper.getEva(selectedValue);
-		System.out.println("현재 평가자 정보 불러오기 :::: " + ev.getEvaluationName());
+		System.out.println("현재 평가 애기 이름 불러오기 :::: " + ev.getEvaluationName());
+		
+		Testee testeeBirth = mapper2.getBirth(selectedValue);
+		System.out.println("현재 평가 애기 나이 불러오기 :::: " + testeeBirth.getTesteeBirth());
+		
 		session.setAttribute("testInfo", ev);
+		session.setAttribute("testeeBirth", testeeBirth);
 		return "redirect:/test_voice_1_1.do";
 	}
 	
 	@RequestMapping("/test_voice_1_1.do")
 	private String test_voice_1_1() {
-		System.out.println("제발 이동 해줄래11111 ?");
+		System.out.println("제발 이동 해줄래 ?");
 		return "/test/test_voice_1_1";
 	}
 	
@@ -54,9 +61,15 @@ public class TestController {
 		System.out.println("controller 값 : " + selectedValue);
 		mapper.newEva(selectedValue);
 		System.out.println("새로운 평가 시작2");
+		
 		Evaluation ev = mapper.getEva(selectedValue);
 		System.out.println("현재 평가자 정보 불러오기 :::: " + ev.getEvaluationName());
+		
+		Testee testeeBirth = mapper2.getBirth(selectedValue);
+		System.out.println("현재 평가 애기 나이 불러오기 :::: " + testeeBirth.getTesteeBirth());
+		
 		session.setAttribute("testInfo", ev);
+		session.setAttribute("testeeBirth", testeeBirth);
 		return "redirect:/test_voice_2_1.do";
 	}
 	

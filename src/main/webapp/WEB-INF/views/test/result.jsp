@@ -278,12 +278,12 @@
                         <div class="textbox"> <br>
                         <!-- 결과출력 멘트-->
                             <span style="font-size: 20px; font-family: 'GangwonEdu_OTFBoldA'; color: #333;">
-                                ${result.resultString}
-                                메인 문장 :: ${mainText}
+<%--                                 ${result.resultString} --%>
+                                [${testInfo.evaluationName}]은/는 ${mainText}
                                 <br>
-                                솔루션 상 문장 :: ${solHighText}
+                                ${solHighText}
                                 <br>
-                                솔루션 하 문장 :: ${solLowText}
+                                ${solLowText}
                             </span>
                                 <!--확성기 아이콘-->
                                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">

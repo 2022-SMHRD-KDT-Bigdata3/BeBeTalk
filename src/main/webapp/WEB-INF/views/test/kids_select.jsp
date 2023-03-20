@@ -423,36 +423,75 @@
     <!-- Core theme JS-->
     <script src="js/scripts1.js"></script>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
     
 	 // 바다테마 버튼 클릭 이벤트 리스너 등록
-	    document.querySelector('.theme1').addEventListener('click', function() {
-	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
-	    console.log(selectedValue);
-	    var xhr = new XMLHttpRequest();
-	    xhr.open('POST', '${cpath}/testVoice1-1.do');
-	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	    xhr.onload = function() {
-	    console.log('Data sent');
-	    // 페이지 이동
-	    window.location.href = '${cpath}/test_voice_1_1.do';
-	    };
-	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
-	    });
-	
+	$('.theme1').click(function() {
+	  var selectedValue = $('input[name="check"]:checked').val();
+	  console.log(selectedValue);
+	  $.ajax({
+	    url: '${cpath}/testVoice1-1.do',
+	    type: 'POST',
+	    data: { selectedValue: selectedValue },
+	    success: function() {
+	      console.log('Data sent');
+	      // 페이지 이동
+	      window.location.href = '${cpath}/test_voice_1_1.do';
+	    },
+	    error: function() {
+	      console.log('Error');
+	    }
+	  });
+	});
+	 
 	 // 꽃밭테마 버튼 클릭 이벤트 리스너 등록
-	    document.querySelector('.theme2').addEventListener('click', function() {
-	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
-	    var xhr = new XMLHttpRequest();
-	    xhr.open('POST', '${cpath}/testVoice2-1.do');
-	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	    xhr.onload = function() {
-	    console.log('Data sent');
-	 // 페이지 이동
-	    window.location.href = '${cpath}/test_voice_2_1.do';
-	    };
-	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
-	    });
+	$('.theme2').click(function() {
+	  var selectedValue = $('input[name="check"]:checked').val();
+	  console.log(selectedValue);
+	  $.ajax({
+	    url: '${cpath}/testVoice2-1.do',
+	    type: 'POST',
+	    data: { selectedValue: selectedValue },
+	    success: function() {
+	      console.log('Data sent');
+	      // 페이지 이동
+	      window.location.href = '${cpath}/test_voice_2_1.do';
+	    },
+	    error: function() {
+	      console.log('Error');
+	    }
+	  });
+	});
+    
+// 	 // 바다테마 버튼 클릭 이벤트 리스너 등록
+// 	    document.querySelector('.theme1').addEventListener('click', function() {
+// 	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
+// 	    console.log(selectedValue);
+// 	    var xhr = new XMLHttpRequest();
+// 	    xhr.open('POST', '${cpath}/testVoice1-1.do');
+// 	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// 	    xhr.onload = function() {
+// 	    console.log('Data sent');
+// 	    // 페이지 이동
+// 	    window.location.href = '${cpath}/test_voice_1_1.do';
+// 	    };
+// 	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
+// 	    });
+	
+// 	 // 꽃밭테마 버튼 클릭 이벤트 리스너 등록
+// 	    document.querySelector('.theme2').addEventListener('click', function() {
+// 	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
+// 	    var xhr = new XMLHttpRequest();
+// 	    xhr.open('POST', '${cpath}/testVoice2-1.do');
+// 	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// 	    xhr.onload = function() {
+// 	    console.log('Data sent');
+// 	 // 페이지 이동
+// 	    window.location.href = '${cpath}/test_voice_2_1.do';
+// 	    };
+// 	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
+// 	    });
 	     
     </script>
     

@@ -117,7 +117,7 @@
 	                        <div class="card-body">
 	                            <h5 class="card-title text-center"> ${vo.testKidsNick} </h5>
 	                            <p class="card-text text-center"> ${vo.testeeBirth} / ${vo.testeeSex} </p>
-	                            <button type="button" class="btn btn-default btn-sm text-white"
+	                            <button type="button" class="btn btn-default btn-sm text-white" onclick="location.href='${cpath}/childremove.do?testKidsNick=${vo.testKidsNick}'"
 	                                style="background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
 	                        </div>
 	                    </div>
@@ -138,56 +138,34 @@
                 <br>
             </div>
             <div class="row justify-content-center">
-                <div class="item col-12 col-lg-4 p-3 mb-4" >
-                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;background-color: white;">
-                        <h6>검사 날짜</h6>
-                        <hr>
-                        <blockquote class="quote">
-                            "이전 검사 결과 "
-                        </blockquote>
-                        <div class="source row gx-md-3 gy-3 gy-md-0">
-                            <div class="col source-info text-center text-md-start">
-                                <div class="source-name" style="text-align: right;">자녀이름</div>
-                                <div class="source-info" style="text-align: right;">성별/나이</div>
-                            </div>
-                        </div>                    
-                    </div>     
-                </div>
-                <div class="item col-12 col-lg-4 p-3 mb-4" >
-                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;background-color: white;">
-                        <h6>검사 날짜</h6>
-                        <hr>
-                        <blockquote class="quote">
-                            "이전 검사 결과 "
-                        </blockquote>
-                        <div class="source row gx-md-3 gy-3 gy-md-0">
-                            <div class="col source-info text-center text-md-start">
-                                <div class="source-name" style="text-align: right;">자녀이름</div>
-                                <div class="source-info" style="text-align: right;">성별/나이</div>
-                            </div>
-                        </div>                    
-                    </div>     
-                </div>
-                <div class="item col-12 col-lg-4 p-3 mb-4" >
-                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;background-color: white;">
-                        <h6>검사 날짜</h6>
-                        <hr>
-                        <blockquote class="quote">
-                            "이전 검사 결과 "
-                        </blockquote>
-                        <div class="source row gx-md-3 gy-3 gy-md-0">
-                            <div class="col source-info text-center text-md-start">
-                                <div class="source-name" style="text-align: right;">자녀이름</div>
-                                <div class="source-info" style="text-align: right;">성별/나이</div>
-                            </div>
-                        </div>                    
-                    </div>     
-                </div>
-    
-            </div>
             
-        
+            <!-- 테스트 결과 보여주는 카드 시작 -->
+	            <c:if test="${!empty prevResult}">
+		            <c:forEach var="prevo" items="${prevResult}">
+		                <div class="item col-12 col-lg-4 p-3 mb-4" >
+		                    <div class="item-inner theme-bg-light rounded p-4 " style="border : 2px solid #f89808;background-color: white;">
+		                        <h6><fmt:formatDate value="${prevo.evaluationDate}" pattern="yyyy-MM-dd HH:ss" /></h6>
+		                        <hr>
+		                        <blockquote class="quote">
+		                            "${prevo.evaluationResult_1}"
+		                            <br>
+		                            "${prevo.evaluationResult_2}"
+		                        </blockquote>
+		                        <div class="source row gx-md-3 gy-3 gy-md-0">
+		                            <div class="col source-info text-center text-md-start">
+		                                <div class="source-name" style="text-align: right;">${prevo.evaluationName}</div>
+		                                <!-- <div class="source-info" style="text-align: right;">성별/나이</div>-->
+		                            </div>
+		                        </div>                    
+		                    </div>     
+		                </div>
+		            </c:forEach>
+		        </c:if>
+    		<!-- 테스트 결과 보여주는 카드 끝 -->
+
+            </div>
         </div>
+        
     </section>
     <br><br><br>
     <!-- 검사 이력 보여주기
