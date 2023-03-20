@@ -1,7 +1,6 @@
 <%@page import="kr.bebetalk.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+    pageEncoding="UTF-8"%>    
      <!-- jstl 태그들은 다른 태그들과 충돌이 날 수 있기 때문에 접두사로 c를 붙여준다! -->
   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
   <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
@@ -22,6 +21,7 @@
     <meta name="viewport" content="width=640, user-scalable=yes">
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta charset="UTF-8">
     <title> BeBeTalk </title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -64,6 +64,7 @@
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/childList.do?testeeID=${uvo.userID}" style="font-size: 1em;color: rgb(2, 50, 4);"> TEST </a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE </a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/logout.do" style="font-size: 1em; color: rgb(2, 50, 4);">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -88,7 +89,7 @@
     <!--로그인된 회원 이름 보여주기-->
     <section>
         <div class="container px-5 " style="padding-top:40px;">
-            <h1>${uvo.userName}님 환영합니다.</h1>
+            <h4>${uvo.userName}님 환영합니다.</h4>
         </div>
     </section>
 
@@ -116,9 +117,9 @@
 		                    </c:if>
 	                        <div class="card-body">
 	                            <h5 class="card-title text-center"> ${vo.testKidsNick} </h5>
-	                            <p class="card-text text-center"> ${vo.testeeBirth} / ${vo.testeeSex} </p>
+	                            <p class="card-text text-center" style="font-size:13px"> ${vo.testeeBirth} / ${vo.testeeSex}아</p>
 	                            <button type="button" class="btn btn-default btn-sm text-white" onclick="location.href='${cpath}/childremove.do?testKidsNick=${vo.testKidsNick}'"
-	                                style="background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
+	                                style=" font-family: 'GangwonEdu_OTFBoldA'; background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
 	                        </div>
 	                    </div>
 	                </div>
@@ -154,7 +155,7 @@
 		                        <div class="source row gx-md-3 gy-3 gy-md-0">
 		                            <div class="col source-info text-center text-md-start">
 		                                <div class="source-name" style="text-align: right;">${prevo.evaluationName}</div>
-		                                <!-- <div class="source-info" style="text-align: right;">성별/나이</div>-->
+		                                
 		                            </div>
 		                        </div>                    
 		                    </div>     
@@ -168,54 +169,6 @@
         
     </section>
     <br><br><br>
-    <!-- 검사 이력 보여주기
-    <section class="bg-light" style="padding: 20px 0px 20px 0px;">
-        <div class="container px-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/03.jpg" alt="..." /></div>
-                    </div>
-                <div class="col-lg-6 order-lg-5">
-                    <div class="p-5">
-                        <h2>검사 이력</h2>
-                        <hr class='hr-solid' style="border : 0px;border-top: 5px solid #88c56a;"/>
-                    </div>
-                    <div style="width: 9px;">
-                        <table class="table" style="width: 900px;">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col-">자녀이름</th>
-                                    <th scope="col">결과</th>
-                                    <th scope="col">검사일</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>경워니</td>
-                                    <td>" 잊었니, 날 잊어버렸니 "</td>
-                                    <td>2023.03.08</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>은지니</td>
-                                    <td>" 사물을 보고 느낌 "</td>
-                                    <td>2023.03.07</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>유나니</td>
-                                    <td>" 큐알 찍으세요 "</td>
-                                    <td>2023.03.06</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
 
     <!-- Footer-->
     <footer class="border-top">

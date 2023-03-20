@@ -63,6 +63,9 @@
 					<li class="nav-item">
 						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);">My page</a>
 					</li>
+					<li class="nav-item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/logout.do" style="font-size: 1em; color: rgb(2, 50, 4);">Logout</a>
+               </li>
 				</c:if>
 								
 			<!-- 로그인 X 일 경우 login만 출력 -->
@@ -123,11 +126,34 @@
 						style="background-color: rgb(158, 201, 84)">
 						<br>
 						<h2 >Services</h2>
-						<h5 style="color: darkgreen;">딥러닝을 활용한 아동음성데이터 연령 분석 서비스</h5><br>
+						<h5 style="color: darkgreen;"> 딥러닝을 활용한 아동 음성 연령 분석 서비스 </h5><br>
 					</div>
-					<div class="row gx-4 gx-lg-5"
-						style="background-color: rgb(158, 201, 84)">
+					<div class="row gx-4 gx-lg-5" style="background-color: rgb(158, 201, 84)">
 						<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+							<span class="service-icon rounded-circle mx-auto mb-3"><svg id="service-svg"
+									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+									fill="currentColor" class="bi bi-soundwave" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+										d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z" />
+                                    </svg>  <i class="icon-screen-smartphone"></i>
+							</span>
+								<h4><strong> 음성 검사 </strong></h4>
+						</div>
+
+						<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+							<span class="service-icon rounded-circle mx-auto mb-3" s> 
+                                    <svg id="service-svg"
+									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+									fill="currentColor" class="bi bi-ui-checks" viewBox="0 0 16 16">
+                                        <path
+										d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708l-2 2zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708l-2 2zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+                                     <i class="icon-pencil"></i>
+							</span>
+								<h4><strong> 문항 검사 </strong></h4>
+						</div>
+
+						<div class="col-lg-3 col-md-6 mb-5 mb-md-0">
 							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
 									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
 									fill="currentColor" class="bi bi-music-note-list"
@@ -140,36 +166,10 @@
 										d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
                                         <path fill-rule="evenodd"
 										d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                                    </svg> <i class="icon-screen-smartphone"></i>
+                                    </svg><i class="icon-like"></i>
 							</span>
 							<h4>
-								  <h4><strong style="color: white !important">연령별<br>음성데이터 분석</strong></h4>
-							</h4>
-						</div>
-
-						<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-							<span class="service-icon rounded-circle mx-auto mb-3" s> <svg id="service-svg"
-									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
-									fill="currentColor" class="bi bi-soundwave" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-										d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z" />
-                                    </svg> <i class="icon-pencil"></i>
-							</span>
-							<h4>
-								 <h4><strong>음성 검사</strong></h4>
-							</h4>
-						</div>
-
-						<div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-							<span class="service-icon rounded-circle mx-auto mb-3"> <svg id="service-svg"
-									xmlns="http://www.w3.org/2000/svg" width="45" height="45"
-									fill="currentColor" class="bi bi-ui-checks" viewBox="0 0 16 16">
-                                        <path
-										d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708l-2 2zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708l-2 2zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
-                                    </svg> <i class="icon-like"></i>
-							</span>
-							<h4>
-								<strong>문항 검사</strong>
+								<h4><strong style="color: white !important"> 음성 데이터 분석</strong></h4>
 							</h4>
 						</div>
 
@@ -184,7 +184,7 @@
                                     </svg> <i class="icon-mustache"></i>
 							</span>
 							<h4>
-								<strong>결과안내</strong>
+								<strong>결과 안내</strong>
 							</h4>
 							<br>
 						</div>

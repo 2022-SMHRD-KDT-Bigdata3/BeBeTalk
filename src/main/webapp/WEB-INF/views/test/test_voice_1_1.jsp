@@ -369,9 +369,9 @@
             <div class="container"
                style="box-shadow: 2px 2px 2px 2px rgb(196, 195, 195); border-radius: 20px; width: 1050px;">
                <br>
-               <content class="test_record_explain"> <strong
-                  style="text-align: left; color: #228B22; font-family: 'GangwonEdu_OTFBoldA';">
-                  음성 테스트 방법 안내 </strong> <br>
+               <content class="test_record_explain"> 
+               <h4 style="text-align: center; color: #228B22; font-family: 'GangwonEdu_OTFBoldA'; font-weight:bolder;">
+                  음성 테스트 방법 안내 </h4>
                <br>
                <h5>1. [재생] 버튼을 누르시면 테스트 음성이 재생됩니다.</h5>
                <h5>2. [녹음] 버튼을 누른 후 아이의 음성을 녹음해주세요</h5>
