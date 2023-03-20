@@ -64,6 +64,7 @@
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/childList.do?testeeID=${uvo.userID}" style="font-size: 1em;color: rgb(2, 50, 4);"> TEST </a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);"> MY PAGE </a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/logout.do" style="font-size: 1em; color: rgb(2, 50, 4);">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -116,7 +117,7 @@
 		                    </c:if>
 	                        <div class="card-body">
 	                            <h5 class="card-title text-center"> ${vo.testKidsNick} </h5>
-	                            <p class="card-text text-center"> ${vo.testeeBirth} / ${vo.testeeSex} </p>
+	                            <p class="card-text text-center" style="font-size:13px"> ${vo.testeeBirth} / ${vo.testeeSex}아</p>
 	                            <button type="button" class="btn btn-default btn-sm text-white"
 	                                style=" font-family: 'GangwonEdu_OTFBoldA'; background-color: rgb(10, 75, 18);; float: right; border-radius: 10px;">삭제</button>
 	                        </div>

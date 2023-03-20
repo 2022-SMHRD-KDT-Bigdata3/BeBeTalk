@@ -63,6 +63,9 @@
 					<li class="nav-item">
 						<a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/myPage.do?testeeID=${uvo.userID}" style="font-size: 1em; color: rgb(2, 50, 4);">My page</a>
 					</li>
+					<li class="nav-item">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="${cpath}/logout.do" style="font-size: 1em; color: rgb(2, 50, 4);">Logout</a>
+               </li>
 				</c:if>
 								
 			<!-- 로그인 X 일 경우 login만 출력 -->

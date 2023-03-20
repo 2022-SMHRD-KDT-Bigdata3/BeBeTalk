@@ -119,7 +119,7 @@
         position: relative;
       }
       
-      
+            
       /* 검사결과창 스타일 */
       .result-box {
         /* width: 700px;
@@ -273,14 +273,21 @@
                   <div class="inBox"> 
                       <div class="mark">
                       </div> 
-                        <p style="font-size: 2.3em; color: rgb(245, 130, 7); font-family: 'Gaegu'; font-weight: 38;"> 결과와 솔루션 안내<br>
+                        <p style="font-size: 2.3em; color: #FF8200; font-family: 'Gaegu'; font-weight: 38;"> 베베톡 검사 결과<br>
                         <img src="resources/assets/img/아이선택페이지_프로필1.jpg" style="width:200px; height: 200px; margin-bottom: -32px;" />
                         <!--결과출력 텍스트 박스--> 
-                        <div class="textbox"> <br>
+                        <div class="textbox"><br>
                         <!-- 결과출력 멘트-->
-                            <span style="font-size: 20px; font-family: 'GangwonEdu_OTFBoldA'; color: #333;">
+                            <span style="font-size: 23px; font-family: 'GangwonEdu_OTFBoldA';  font-weight: 500; color:#D2691E">
                                 ${result.resultString}
-                            </span>
+                                ${mainText}</span>
+                                <br>
+                                <span style="font-size: 18px; font-family: 'GangwonEdu_OTFBoldA'; color: #333;">
+                                ${solHighText}  
+                                </span>
+                                <br>
+                                <span 솔루션 하 문장 :: ${solLowText}
+                                </span>
                                 <!--확성기 아이콘-->
                                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
                                     <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z"/>

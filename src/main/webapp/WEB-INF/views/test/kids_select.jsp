@@ -265,10 +265,10 @@
 		                            </div>
 		                            
 		                            <c:if test="${vo.testeeSex == '남'}">
-		                            	<img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필1.jpg"/></a>	                            
+		                            	<img class="img-fluid" src="resources/assets/img/프1.jpg"/></a>	                            
 		                            </c:if>
 		                            <c:if test="${vo.testeeSex == '여'}">
-		                           		<img class="img-fluid" src="resources/assets/img/아이선택페이지_프로필3.jpg"/></a>	                            
+		                           		<img class="img-fluid" src="resources/assets/img/프2.jpg"/></a>	                            
 		                            </c:if>
 		                        </div>
 		
@@ -343,7 +343,7 @@
 								<br>
                                 남 &nbsp;<input type="radio" name="testeeSex" value="남">&nbsp;&nbsp;&nbsp;&nbsp;
                                 여 &nbsp;<input type="radio" name="testeeSex" value="여"><br><br>  
-                                <input class="child_summit" type="submit" value="전송">
+                                <input class="child_summit" type="submit" value="등록">
                             </form>
                          
                             <!--모달창 작동-->
