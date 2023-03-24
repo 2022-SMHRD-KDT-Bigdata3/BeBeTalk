@@ -16,6 +16,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8" />
     <!--반응형 사이즈 맞추기-->
     <meta name="viewport" content="width=640, user-scalable=yes">
@@ -23,7 +24,7 @@
     <meta name="author" content="" />
     <meta charset="UTF-8">
     <title> BeBeTalk </title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${cpath}/resources/assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -209,7 +210,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="${cpath}/resources/js/scripts.js"></script>
 </body>
 
 </html>

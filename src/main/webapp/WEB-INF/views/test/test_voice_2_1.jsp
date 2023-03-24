@@ -16,13 +16,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
 		<meta charset="utf-8" />
 		<!--반응형 사이즈 맞추기-->
 		<meta name="viewport" content="width=640, user-scalable=yes">
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 		<title>BeBeTalk</title>
-		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="${cpath}/resources/assets/favicon.ico" />
 		<!-- Font Awesome icons (free version)-->
 		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 			crossorigin="anonymous"></script>
@@ -211,7 +212,7 @@
     	   
     	    
     	    $.ajax({ //url이 test1-1인 flask로 음성을 보내는 ajax
-            	url : "http://127.0.0.1:5001/test2_1",
+            	url : "https://bebetalk-flask.ddns.net/test2_1",
             	type : "POST",
             	data : formData,
             	contentType : false,
@@ -241,7 +242,7 @@
 </script> 
 
    
-		</head>
+</head>
 		
 		<body>
 			<!-- 상단: 로고와 메뉴-->
@@ -269,22 +270,6 @@
 			</nav>
 		
 		
-			<!-- 검사관련 동영상 송출 -->
-			<!-- <video muted autoplay loop>
-		            <source src="./assets/img/해변,게.mp4" type="video/mp4">
-		            <strong>Your browser does not support the video tag.</strong>
-		          </video>
-		          <h3 style="text-align: center; margin-left: 100px; margin-right: 100px;  color: black;  font-family: 'GangwonEdu_OTFBoldA';" >게친구들이 산책을 나왔어요</h3> -->
-			<!-- 음성 검사이미지 -->
-			<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-		            <div class="carousel-inner">
-		                <div class="carousel-item active" style="background-image: url('assets/img/동화1.jpg')">
-		                  <div class="carousel-caption">
-		                    <h3 style="background-color: rgb(229, 86, 8); color: black;  font-family: 'GangwonEdu_OTFBoldA';" >여우가 노래를 해요</h3>
-		                  </div>
-		                </div>
-		            </div>
-		        </div> -->
 		
 			<!-- 헤더 여백주기 -->
 			<div class="header_white"></div>
@@ -386,16 +371,7 @@
 				<br>
 		
 		
-				<!-- 음성 검사이미지 -->
-				<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-		    <div class="carousel-inner">
-		        <div class="carousel-item active" style="background-image: url('assets/img/동화1.jpg')">
-		          <div class="carousel-caption">
-		            <h3 style="background-color: rgb(229, 86, 8); color: black;  font-family: 'GangwonEdu_OTFBoldA';" >여우가 노래를 해요</h3>
-		          </div>
-		        </div>
-		    </div>
-		</div> -->
+				
 		
 		
 				<!--다음(2번째 음성검사)로 가는 버튼-->

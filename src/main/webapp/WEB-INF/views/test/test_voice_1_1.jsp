@@ -13,8 +13,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
       <head>
+      
       <meta charset="utf-8" />
       <!--반응형 사이즈 맞추기-->
       <meta name="viewport" content="width=640, user-scalable=yes">
@@ -210,7 +210,7 @@
     	   
     	    
     	    $.ajax({ //url이 test1-1인 flask로 음성을 보내는 ajax
-            	url : "http://127.0.0.1:5001/test1_1",
+            	url : "https://bebetalk-flask.ddns.net/test1_1",
             	type : "POST",
             	data : formData,
             	contentType : false,
@@ -236,6 +236,8 @@
 
     	    // ol태그에 li태그르 append
     	    recordingsList.appendChild(li);*/
+    	    
+    	 
     	}
 </script>          
 </head>
@@ -265,22 +267,6 @@
          </nav>
       
       
-         <!-- ê²ì¬ê´ë ¨ ëìì ì¡ì¶ -->
-         <!-- <video muted autoplay loop>
-                  <source src="./assets/img/í´ë³,ê².mp4" type="video/mp4">
-                  <strong>Your browser does not support the video tag.</strong>
-                </video>
-                <h3 style="text-align: center; margin-left: 100px; margin-right: 100px;  color: black;  font-family: 'GangwonEdu_OTFBoldA';" >ê²ì¹êµ¬ë¤ì´ ì°ì±ì ëìì´ì</h3> -->
-         <!-- ìì± ê²ì¬ì´ë¯¸ì§ -->
-         <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                      <div class="carousel-item active" style="background-image: url('assets/img/ëí1.jpg')">
-                        <div class="carousel-caption">
-                          <h3 style="background-color: rgb(229, 86, 8); color: black;  font-family: 'GangwonEdu_OTFBoldA';" >ì¬ì°ê° ë¸ëë¥¼ í´ì</h3>
-                        </div>
-                      </div>
-                  </div>
-              </div> -->
       
          <!-- 헤더 여백주기 -->
          <div class="header_white"></div>

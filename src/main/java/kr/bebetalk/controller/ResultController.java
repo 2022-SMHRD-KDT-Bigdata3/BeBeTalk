@@ -7,12 +7,21 @@ import kr.bebetalk.entity.ResultText;
 import kr.bebetalk.mapper.EvaluationMapper;
 import kr.bebetalk.mapper.ResultTextMapper;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
@@ -24,26 +33,17 @@ public class ResultController {
 	@Autowired
 	private EvaluationMapper mapper2;
 	
-	
+	@RequestMapping("/result.do")
+	public String ajax(@RequestParam("result") String result , Model model, HttpSession session) {
+		
+		System.out.println("Result 생성 완료 :: " + result);
+		
+		model.addAttribute("result", result);
+        
+        System.out.println("결과 받아오기 완료 :: " + result);
 
-	@GetMapping("/result.do")
-    public String getResult(Model model, HttpSession session) {
-        // Flask에서 보낸 모델 결과 받아오기
-    	final String url = "http://127.0.0.1:5000/result";
-    	System.out.println("리절트 점 두");
-        
-        RestTemplate restTemplate = new RestTemplate();
-        String resultString = restTemplate.getForObject(url, String.class);
-        
-        Result result = new Result();
-        System.out.println("Result 생성 완료 :: " + result);
-        
-        result.setResultString(resultString);
-        model.addAttribute("result", result);
-        
-        System.out.println("결과 받아오기 완료 :: " + result.getResultString());
-
-        Float modelRes = Float.parseFloat(result.getResultString());
+        Float modelRes = Float.parseFloat(result);
+        System.out.println("소수점 :: " + result);
         
 	     // 메인 문장 받아오기
 	  	  ResultText main = mapper.getMainText();
@@ -89,6 +89,10 @@ public class ResultController {
 	  		  model.addAttribute("solLowText", solLowText);
 	  	  }
         return "/test/result";
-    }    
+		
+	}
+	
+	
+
 }
 

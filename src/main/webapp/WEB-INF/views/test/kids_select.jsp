@@ -19,7 +19,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title> BeBeTalk </title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="${cpath}/resources/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- bebebtalk 로고 Google fonts-->
@@ -265,10 +265,10 @@
 		                            </div>
 		                            
 		                            <c:if test="${vo.testeeSex == '남'}">
-		                            	<img class="img-fluid" src="resources/assets/img/프1.jpg"/></a>	                            
+		                            	<img class="img-fluid" src="resources/assets/img/프2.jpg"/></a>	                            
 		                            </c:if>
 		                            <c:if test="${vo.testeeSex == '여'}">
-		                           		<img class="img-fluid" src="resources/assets/img/프2.jpg"/></a>	                            
+		                           		<img class="img-fluid" src="resources/assets/img/프1.jpg"/></a>	                            
 		                            </c:if>
 		                        </div>
 		
@@ -416,7 +416,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts1.js"></script>
+    <script src="${cpath}/resources/js/scripts1.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -458,35 +458,7 @@
 	    }
 	  });
 	});
-    
-// 	 // 바다테마 버튼 클릭 이벤트 리스너 등록
-// 	    document.querySelector('.theme1').addEventListener('click', function() {
-// 	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
-// 	    console.log(selectedValue);
-// 	    var xhr = new XMLHttpRequest();
-// 	    xhr.open('POST', '${cpath}/testVoice1-1.do');
-// 	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-// 	    xhr.onload = function() {
-// 	    console.log('Data sent');
-// 	    // 페이지 이동
-// 	    window.location.href = '${cpath}/test_voice_1_1.do';
-// 	    };
-// 	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
-// 	    });
-	
-// 	 // 꽃밭테마 버튼 클릭 이벤트 리스너 등록
-// 	    document.querySelector('.theme2').addEventListener('click', function() {
-// 	    var selectedValue = document.querySelector('input[name="check"]:checked').value;
-// 	    var xhr = new XMLHttpRequest();
-// 	    xhr.open('POST', '${cpath}/testVoice2-1.do');
-// 	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-// 	    xhr.onload = function() {
-// 	    console.log('Data sent');
-// 	 // 페이지 이동
-// 	    window.location.href = '${cpath}/test_voice_2_1.do';
-// 	    };
-// 	    xhr.send('selectedValue=' + encodeURIComponent(selectedValue));
-// 	    });
+ 
 	     
     </script>
     

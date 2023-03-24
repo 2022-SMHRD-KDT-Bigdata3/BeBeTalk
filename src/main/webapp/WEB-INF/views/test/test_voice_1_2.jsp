@@ -15,29 +15,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<!--ë°ìí ì¬ì´ì¦ ë§ì¶ê¸°-->
-<meta name="viewport" content="width=640, user-scalable=yes">
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>BeBeTalk</title>
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<!-- Font Awesome icons (free version)-->
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-	crossorigin="anonymous"></script>
-<!-- bebebtalk 로고 Google fonts-->
-<link
-	href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap"
-	rel="stylesheet">
-<!-- Google fonts-->
-<link
-	href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css" />
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-	rel="stylesheet" type="text/css" />
-<!-- Core theme CSS (includes Bootstrap)-->
-<link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
+
+	<meta charset="utf-8" />
+	<!--반응형 사이즈 맞추기-->
+	<meta name="viewport" content="width=640, user-scalable=yes">
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>BeBeTalk</title>
+	<link rel="icon" type="image/x-icon" href="${cpath}/resources/assets/favicon.ico" />
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+		crossorigin="anonymous"></script>
+	<!-- bebebtalk 로고 Google fonts-->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap"
+		rel="stylesheet">
+	<!-- Google fonts-->
+	<link
+		href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+		rel="stylesheet" type="text/css" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+		rel="stylesheet" type="text/css" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="${cpath}/resources/css/styles.css" rel="stylesheet" />
 		
 		<style>
 		/* 검사 순서안내  반응형 센터정렬 */
@@ -211,7 +212,7 @@
     	   
     	    
     	    $.ajax({ //url이 test1-2인 flask로 음성을 보내는 ajax
-            	url : "http://127.0.0.1:5001/test1_2",
+            	url : "https://bebetalk-flask.ddns.net/test1_2",
             	type : "POST",
             	data : formData,
             	contentType : false,
@@ -383,16 +384,7 @@
 				<br>
 				<br>
 		
-				<!-- 음성 검사이미지 -->
-				<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-		    <div class="carousel-inner">
-		        <div class="carousel-item active" style="background-image: url('assets/img/동화1.jpg')">
-		          <div class="carousel-caption">
-		            <h3 style="background-color: rgb(229, 86, 8); color: black;  font-family: 'GangwonEdu_OTFBoldA';" >여우가 노래를 해요</h3>
-		          </div>
-		        </div>
-		    </div>
-		</div> -->
+				
 		
 		
 				<!--다음(3번째 음성검사)로 가는 버튼-->

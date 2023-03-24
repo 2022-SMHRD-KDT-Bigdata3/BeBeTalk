@@ -10,19 +10,18 @@
   <!-- contextpath(유지보수하는데 도움이 됨)를 가지고 오는 방법 -->
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    
         <meta charset="utf-8" />
         <!--반응형 사이즈 맞추기-->
         <meta name="viewport" content="width=640, user-scalable=yes">
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title> BeBeTalk </title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="${cpath}/resources/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- bebebtalk 로고 Google fonts-->
@@ -113,24 +112,15 @@
                 /* box-shadow: 2px 2px 2px 2px gray; */
             }
         </style>
-        <script type="text/javascript">
         
-	        <!--로딩페이지 작동후 20초후 이동-->
-	        $(document).ready(function() {
+        <script>
+        $(document).ready(function() {
 	     	   $('#waiting').hide();
-	     	   $('#lodingBtn').click(function() {
-	     	       $('#waiting').show();
-	     	       setTimeout(function() {
-	     	           window.location.href = "${cpath}/result2.do";
-	     	       }, 20000); // 20초 대기 후 이동
-	     	       return true;
-	     	   });
-	     	});
-        
-        
+     	});
+     
+        	
         </script>
-        
-        
+		
     </head>
     
     <body>
@@ -203,7 +193,7 @@
         <br><br>
         <!--문항체크실시-->
         <div class="container px-5 bg-light ">
-            <div class="checkform" style="padding-top: 5%;padding-bottom: 10%;">
+            <div  class="checkform" style="padding-top: 5%; padding-bottom: 10%;">
                 <h2 style="text-align: center;">[4세용] 우리아이 간단검사🌱</h2>
                 <hr class='hr-solid' style="border : 0px;border-top: 5px solid #88c56a;" />
                 <br>
@@ -236,7 +226,7 @@
                         <li>대부분의 단어를 명확하게 발음할 수 있나요?</li>
                         <input type="radio" name="question3_1" value="yes"> Yes
                         <input type="radio" name="question3-1" value="no"> No
-                        <li>발음에 대한 자기 평가가 가능하나요?</li>
+                        <li>단모음과 이중모음의 발음, 단자음과 이중자음의 발음을 구별할 수 있나요</li>
                         <input type="radio" name="question3_2" value="yes"> Yes
                         <input type="radio" name="question3_2" value="no"> No
                     </ul>
@@ -264,7 +254,7 @@
                         <input type="radio" name="question5_2" value="no"> No
                     </ul>
                     <div class="d-block text-center mt-2 small">
-                        <button id="lodingBtn" type="button" class="btn btn-primary" onClick="location.href='${cpath}/result.do'"> 결과 확인하기
+                        <button id="lodingBtn" type="button" class="btn btn-primary"> 결과 확인하기
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -276,7 +266,7 @@
             </div>
         </div><br><br>
         
-        
+
 <!-- 로딩중일때 뜨는 가게 이미지 -->
     <div id="waiting">
     <div class="store-container">
@@ -360,7 +350,7 @@
                   <line fill="none" class="stroke" x1="728" y1="213.3" x2="520" y2="213.2"/>
                   <polyline fill="none" class="stroke" points="520 182.8 558.5 214.2 520 243.7 "/>
                   <path fill="#FFF" class="stroke" d="M506.9 253.6H21.2c-6.6 0-12-5.4-12-12v-56.7c0-6.6 5.4-12 12-12h485.8c6.6 0 12 5.4 12 12v56.7C518.9 248.2 513.5 253.6 506.9 253.6z"/>
-                  <text transform="matrix(1.0027 0 0 1 44.8218 224.8768)" font-family='GangwonEdu_OTFBoldA' font-size="34" fill="#03612f"> 문항 체크 테스트로 이동중입니다-💚</text>
+                  <text transform="matrix(1.0027 0 0 1 44.8218 224.8768)" font-family='GangwonEdu_OTFBoldA' font-size="34" fill="#03612f"> 검사 결과를 배달중입니다 - 💚</text>
                   <path fill="#9acd32" d="M850.5 216.5h79.7l-4.5 10.7c0 0-2.7 7.2-9.9 7.2h-72.6c0 0-6.3-0.9-1.8-7.2L850.5 216.5z"/>
                   <path fill="none" class="stroke" d="M745.3 193.7h-58.2c-3.7 0-6.7-3-6.7-6.7v0c0-3.7 3-6.7 6.7-6.7h58.2c3.7 0 6.7 3 6.7 6.7v0C752 190.6 749 193.7 745.3 193.7z"/>
                   <path fill="none" class="stroke" d="M850.5 216.5h79.7l-4.5 10.7c0 0-2.7 7.2-9.9 7.2h-72.6c0 0-6.3-0.9-1.8-7.2L850.5 216.5z"/>
@@ -453,7 +443,7 @@
         <br><br> 
         </div>      
          
-   </div>
+   </div> 
     
         <!-- Footer-->
         <footer class="border-top">
@@ -494,7 +484,69 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="${cpath}/resources/js/scripts.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+		
+     
+        $('#lodingBtn').click(function() {
+				console.log("start"); 
+				$('#waiting').show();
+	     	       setTimeout(function() {
+	     	       }, 20000); // 20초 대기 후 이동
+
+		        const formData = new FormData(); //formData 객체 생성
+		        var checkValue1 = $('input[name="question1_1"]:checked').val();
+		        var checkValue2 = $('input[name="question1_2"]:checked').val();
+		        var checkValue3 = $('input[name="question2_1"]:checked').val();
+		        var checkValue4 = $('input[name="question2_2"]:checked').val();
+		        var checkValue5 = $('input[name="question2_3"]:checked').val();
+		        var checkValue6 = $('input[name="question3_1"]:checked').val();
+		        var checkValue7 = $('input[name="question3_2"]:checked').val();
+		        var checkValue8 = $('input[name="question4_1"]:checked').val();
+		        var checkValue9 = $('input[name="question4_2"]:checked').val();
+		        var checkValue10 = $('input[name="question4_3"]:checked').val();
+		        var checkValue11 = $('input[name="question5_1"]:checked').val();
+		        var checkValue12 = $('input[name="question5_2"]:checked').val();
+		        
+		        
+		        formData.append("question1_1", checkValue1)
+		        formData.append("question1_2", checkValue2)
+		        formData.append("question2_1", checkValue3)
+		        formData.append("question2_2", checkValue4)
+		        formData.append("question2_3", checkValue5)
+		        formData.append("question3_1", checkValue6)
+		        formData.append("question3_2", checkValue7)
+		        formData.append("question4_1", checkValue8)
+		        formData.append("question4_2", checkValue9)
+		        formData.append("question4_3", checkValue10)
+		        formData.append("question5_1", checkValue11)
+		        formData.append("question5_2", checkValue12)
+		    
+		        
+		        $.ajax({ //url이 test1-1인 flask로 음성을 보내는 ajax
+	            	url : "https://bebetalk-flask.ddns.net/result",
+	            	type : "POST",
+	            	data : formData,
+	            	contentType : false,
+	            	processData : false,
+	            	success : function(data){
+	            		console.log(data); 
+	            		 var result = data["avg"]
+	            		 console.log(result);
+	            		 window.location.href = "${cpath}/result.do?result=" + result;
+	            	},
+	            	error : function(e){ console.log(e); }
+	            });
+	         
+			});
+		
+		</script>   
+	   
+        
+        
+        
+        
     </body>
     
     </html>

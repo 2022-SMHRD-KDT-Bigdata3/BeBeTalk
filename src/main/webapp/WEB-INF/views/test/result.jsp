@@ -14,13 +14,14 @@
 <html lang="en">
 
 <head>
+	
     <meta charset="utf-8" />
     <!--반응형 사이즈 맞추기-->
     <meta name="viewport" content="width=640, user-scalable=yes">
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title> BeBeTalk </title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${cpath}/resources/assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -280,12 +281,13 @@
                         
                         <!-- 결과출력 멘트-->
                             <span style="font-size: 23px; font-family: 'GangwonEdu_OTFBoldA';  font-weight: 500; color:#D2691E">
-                                [${testInfo.evaluationName}]은/는 ${mainText} </span>
-                         <br>
+                                [${testInfo.evaluationName}]은/는 ${mainText} 
+                            </span>
+                            <br>
                             <span style="font-size: 18px; font-family: 'GangwonEdu_OTFBoldA'; color: #333;">
                                 ${solHighText}
                             </span>
-                         <br>
+                         
                           <span style="font-size: 18px; font-family: 'GangwonEdu_OTFBoldA'; color: #333;">
                                 ${solLowText}
                           </span>
@@ -384,7 +386,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="${cpath}/resources/js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

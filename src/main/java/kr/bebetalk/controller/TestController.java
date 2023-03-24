@@ -94,7 +94,7 @@ public class TestController {
 		return "/test/test_check";
 	}
 	
-	@RequestMapping("/result.do")
+	@RequestMapping("/result2.do")
 	private String result() {
 		return "/test/result";
 	}
